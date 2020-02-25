@@ -1,0 +1,34 @@
+!--cach 1--
+BEGIN
+	input a
+	input b
+	input c
+	Max=a
+	if b>Max
+	  max=b
+	end if
+	if c>max
+	  max=c
+	end if
+	display max
+END
+
+!--cach 2--
+BEGIN
+	input a
+	input b
+	input c
+	if a>b
+	  if a>c
+	    display "a la so lon nhat"
+	   else
+	    display "c la so lon nhat"
+	  end if
+	  else
+	    if b>c
+	      display "b la so lon nhat"
+	     else
+	      display "c la so lon nhat"
+	    end if
+	end if
+END

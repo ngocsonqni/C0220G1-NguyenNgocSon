@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DiemTrungBinhVaTong</title>
+</head>
+<body>
+    <script>
+    let DiemLy;
+    let DiemHoa;
+    let DiemSinh;
+    let Tong;
+    let DiemTrungBinh;
+
+    DiemLy = prompt("Nhap Diem Ly")
+    DiemHoa = prompt("Nhap Diem Hoa")
+    DiemSinh = prompt("Nhap Diem Sinh")
+
+    Tong = parseInt(DiemLy)+parseInt(DiemHoa)+parseInt(DiemSinh);
+    DiemTrungBinh = Tong/3;
+
+    document.write("Tong Diem 3 Mon La: " + Tong);
+    document.write('<br/>')
+    document.write("Diem Trung Binh Cua 3 Mon La: " + DiemTrungBinh);
+
+    </script>
+</body>
+</html>

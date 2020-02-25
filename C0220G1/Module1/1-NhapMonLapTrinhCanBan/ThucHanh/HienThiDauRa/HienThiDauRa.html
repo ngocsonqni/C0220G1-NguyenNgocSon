@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>hello</title>
+</head>
+<body>
+        <!--hien thi su dung the html-->
+        <div id="messageDiv"></div>
+        <button type="button" onclick="ShowMessage1();">click me 1!</button>
+        <script>
+           function ShowMessage1() {
+               document.getElementById('messageDiv').innerHTML = 'Xin Chao! (hien thi su dung the html)';
+           }
+        </script>
+        <!--hien thi ket qua qua ham document.write-->
+        <button type="button" onclick="ShowMessage2();">click me 2!</button>
+        <script>
+            function ShowMessage2() {
+                document.write('Xin Chao (hien thi ket qua qua ham document.write)');
+            }
+        </script>
+</body>
+</html>

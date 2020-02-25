@@ -6,11 +6,15 @@
 </head>
 <body>
     <script>
-        let c;
-        let f;
-        c=prompt('Nhap Gia Tri Do C:')
-        f=(9*c)/5+32
-        document.write(c+" Do C Chuyen Sang Do F Bang "+f+" do F");
+        function Dof() {
+            let c;
+            let f;
+            c=document.getElementById('c')
+            f=document.getElementById('f')
+            f.value=(9*parseInt(c.value))/5+32
+        }
     </script>
+    Do C: <input type="text" id="c" value="" onblur="Dof()"><br><br>
+    Do F: <input type="text" id="f" value="">
 </body>
 </html>

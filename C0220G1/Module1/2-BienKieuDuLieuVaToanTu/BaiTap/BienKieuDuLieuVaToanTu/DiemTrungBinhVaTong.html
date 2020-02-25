@@ -5,24 +5,25 @@
     <title>DiemTrungBinhVaTong</title>
 </head>
 <body>
-    <script>
-    let DiemLy;
-    let DiemHoa;
-    let DiemSinh;
-    let Tong;
-    let DiemTrungBinh;
+<script>
+    function tinh() {
+        let DiemLy;
+        let DiemHoa;
+        let DiemSinh;
+        let DiemTong;
+        DiemLy=document.getElementById('DiemLy');
+        DiemHoa=document.getElementById('DiemHoa');
+        DiemSinh=document.getElementById('DiemSinh');
+        DiemTong=document.getElementById('DiemTong')
+        DiemTong.value= parseInt(DiemLy.value)+parseInt(DiemHoa.value)+parseInt(DiemSinh.value)
+    }
+</script>
+        Diem Ly:<input type='text' id="DiemLy" value="" onblur='tinh()'><br><br>
+        Diem Hoa:<input type="text" id="DiemHoa" value="" onblur='tinh()'><br><br>
+        Diem Sinh:<input type="text" id="DiemSinh" value="" onblur='tinh()'><br><br>
+        Diem Tong:<input type="text" id="DiemTong" value="" >
 
-    DiemLy = prompt("Nhap Diem Ly")
-    DiemHoa = prompt("Nhap Diem Hoa")
-    DiemSinh = prompt("Nhap Diem Sinh")
 
-    Tong = parseInt(DiemLy)+parseInt(DiemHoa)+parseInt(DiemSinh);
-    DiemTrungBinh = Tong/3;
 
-    document.write("Tong Diem 3 Mon La: " + Tong);
-    document.write('<br/>')
-    document.write("Diem Trung Binh Cua 3 Mon La: " + DiemTrungBinh);
-
-    </script>
 </body>
 </html>

@@ -6,12 +6,17 @@
 </head>
 <body>
     <script>
+        function dientich() {
         let pi=3.14;
         let r;
         let s;
-        r=prompt('Nhap Ban Kinh Hinh Tron: ')
-        s=r*r*pi
-        document.write('Hinh Tron Ban Kinh '+r+' Co Dien Tich La '+s);
+        r=document.getElementById('r')
+        s=document.getElementById('s')
+        s.value=parseInt(r.value)*parseInt(r.value)*pi
+        }
     </script>
+    Ban Kinh Hinh Tron:<input type="text" id="r" value="" onblur="dientich()"><br><br>
+
+    Dien Tich Hinh Tron:<input type="text" id="s" value="">
 </body>
 </html>

@@ -5,19 +5,33 @@
     <title>hello</title>
 </head>
 <body>
-        <!--hien thi su dung the html-->
-        <div id="messageDiv"></div>
-        <button type="button" onclick="ShowMessage1();">click me 1!</button>
+        <!--hien thi su dung ham alert-->
+        <button type="button" onclick="showMessage1();">Click Me 1!</button>
         <script>
-           function ShowMessage1() {
+            function showMessage1(){
+                alert('Xin chào!');
+            }
+        </script>
+        <!--hien thi su dung the html--><br><br>
+        <div id="messageDiv"></div>
+        <button type="button" onclick="ShowMessage2();">click me 2!</button>
+        <script>
+           function ShowMessage2() {
                document.getElementById('messageDiv').innerHTML = 'Xin Chao! (hien thi su dung the html)';
            }
         </script>
-        <!--hien thi ket qua qua ham document.write-->
-        <button type="button" onclick="ShowMessage2();">click me 2!</button>
+        <!--hien thi ket qua qua ham document.write--><br><br>
+        <button type="button" onclick="ShowMessage3();">click me 3!</button>
         <script>
-            function ShowMessage2() {
+            function ShowMessage3() {
                 document.write('Xin Chao (hien thi ket qua qua ham document.write)');
+            }
+        </script>
+        <!--hien thi ket qua qua ham console.log()--><br><br>
+        <button type="button" onclick="showMessage4();">Click Me 4!</button>
+        <script>
+            function showMessage4(){
+                console.log('Xin chào!');
             }
         </script>
 </body>

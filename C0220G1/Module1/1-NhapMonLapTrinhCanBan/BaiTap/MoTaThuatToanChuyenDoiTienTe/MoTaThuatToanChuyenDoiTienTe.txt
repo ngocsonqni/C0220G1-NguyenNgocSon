@@ -1,0 +1,5 @@
+BEGIN
+	input USD
+	VND=USD*23000
+	display VND
+END

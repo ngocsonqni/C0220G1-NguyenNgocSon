@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script >
+    function cong() {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let ketqua = document.getElementById('ketqua')
+        ketqua.value = num1+" + "+num2+" = "+ (parseInt(num1) + parseInt(num2))
+    }
+    function tru() {
+        let num1=document.getElementById('num1').value
+        let num2=document.getElementById('num2').value
+        let ketqua=document.getElementById('ketqua')
+        ketqua.value = num1+" - "+num2+" = "+ (parseInt(num1) - parseInt(num2))
+    }
+    function nhan() {
+        let num1=document.getElementById('num1').value
+        let num2=document.getElementById('num2').value
+        let ketqua=document.getElementById('ketqua')
+        ketqua.value = num1+" * "+num2+" = "+ (parseInt(num1) * parseInt(num2))
+    }
+    function chia() {
+        let num1=document.getElementById('num1').value
+        let num2=document.getElementById('num2').value
+        let ketqua=document.getElementById('ketqua')
+        ketqua.value = num1+" / "+num2+" = "+ (parseInt(num1) / parseInt(num2))
+    }
+</script>
+
+<form>
+    <input type="text" id="num1" value=""/>
+    <input type="text" id="num2" value=""/>
+    <button type="button" onclick="cong()">Addition(+)</button>
+    <button type="button" onclick="tru()">subtraction(-)</button>
+    <button type="button" onclick="nhan()">Multiplication(x)</button>
+    <button type="button" onclick="chia()">Division(/)</button><br><br>
+    Result Division:<input type="text" id="ketqua" value=""/>
+</form>
+</body>
+</html>

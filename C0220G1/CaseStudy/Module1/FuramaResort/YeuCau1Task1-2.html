@@ -1,0 +1,96 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau1Task1va2</title>
+</head>
+<body>
+    <table border="1">
+    <tr>
+        <th>Ho Va Ten</th>
+        <th><p id="name"></p></th>
+    </tr>
+    <tr>
+        <th>So CMND</th>
+        <th><p id="cmnd"></p></th>
+    </tr>
+    <tr>
+        <th>Ngay Thang Nam Sinh</th>
+        <th><p id="date"></p></th>
+    </tr>
+    <tr>
+        <th>Email</th>
+        <th><p id="email"></p></th>
+    </tr>
+    <tr>
+        <th>Dia Chi</th>
+        <th><p id="address"></p></th>
+    </tr>
+    <tr>
+        <th>Loai Customer</th>
+        <th><p id="customer"></p></th>
+    </tr>
+    <tr>
+        <th>Giam Gia</th>
+        <th><p id="discount"></p></th>
+    </tr>
+    <tr>
+        <th>So Luong Di Kem</th>
+        <th><p id="attach"></p></th>
+    </tr>
+    <tr>
+        <th>So Ngay Thue</th>
+        <th><p id="rentDay"></p></th>
+    </tr>
+    <tr>
+        <th>Loai Dich Vu</th>
+        <th><p id="service"></p></th>
+    </tr>
+    <tr>
+        <th>Loai Phong Thue</th>
+        <th><p id="roomType"></p></th>
+    </tr>
+    <tr>
+        <th>So Tien Phai Tra</th>
+        <th><p id="cost"></p></th>
+     </tr>
+    </table>
+    <script>
+            let Cost;
+            let Name = prompt("Xin vui long nhap vao ten:",'nguyen ngoc son');
+            let CMND=prompt('xin vui long nhap vao so CMND','212402345');
+            let Date=prompt('Xin vui long nhap vao ngay thang nam sinh:','07/06/1994');
+            let Email=prompt('Xin vui long nhap vao Email:','sonnn.qni@gmail.com');
+            let Address=prompt('Xin vui long nhap vao dia chi:','di lang-son ha-quang ngai');
+            let Customer=prompt('Xin vui long nhap vao loai customer:','diamond');
+            let Discount=prompt('Xin vui long nhap vao giam gia:','5');
+            let Attach=prompt('Xin vui long nhap vao so luong di kem:','2');
+            let RentDay=prompt('Xin vui long nhap vao so ngay thue:','4');
+            let Service=prompt('Xin vui long nhap vao loai dich vu:','Villa');
+            let RoomType=prompt('Xin vui long nhap vao loai phong thue:','Vip');
+            alert('Cam on ban da nhap day du thong tin!')
+                if (Service == 'Villa') {
+                    Cost = 500
+                } else if (Service == 'House') {
+                    Cost = 300
+                } else if (Service == 'Room') {
+                    Cost = 100
+                }
+            document.getElementById('name').innerText =Name;
+            document.getElementById('cmnd').innerText =CMND;
+            document.getElementById('date').innerText =Date;
+            document.getElementById('email').innerText =Email;
+            document.getElementById('address').innerText =Address;
+            document.getElementById('customer').innerText =Customer;
+            document.getElementById('discount').innerText =Discount;
+            document.getElementById('attach').innerText =Attach;
+            document.getElementById('rentDay').innerText =RentDay;
+            document.getElementById('service').innerText =Service;
+            document.getElementById('roomType').innerText =RoomType;
+            document.getElementById('cost').innerHTML=parseInt(Cost)*parseInt(RentDay)*(1- parseInt(Discount)/100)+"$"
+
+    </script>
+
+</body>
+</html>

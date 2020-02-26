@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script >
+    function tinh(calculator) {
+        let num1 = document.getElementById('num1').value
+        let num2 = document.getElementById('num2').value
+        let ketqua = document.getElementById('ketqua')
+        if (calculator=='1'){
+            ketqua.value = num1+" + "+num2+" = "+ (parseInt(num1) + parseInt(num2))
+        }
+            else if (calculator=='2'){
+            ketqua.value = num1+" - "+num2+" = "+ (parseInt(num1) - parseInt(num2))
+            }
+                else  if (calculator=='3'){
+                 ketqua.value = num1+" * "+num2+" = "+ (parseInt(num1) * parseInt(num2))
+                }
+                    else if (calculator=='4'){
+                     ketqua.value = num1+" / "+num2+" = "+ (parseInt(num1) / parseInt(num2))
+                     }
+    }
+
+
+</script>
+<form>
+    <input type="text" id="num1" value=""/>
+    <input type="text" id="num2" value=""/>
+    <button type="button"  onclick="tinh(this.value)" value=1>Addition(+)</button>
+    <button type="button"  onclick="tinh(this.value)" value=2>subtraction(-)</button>
+    <button type="button"  onclick="tinh(this.value)" value=3>Multiplication(x)</button>
+    <button type="button"  onclick="tinh(this.value)" value=4>Division(/)</button><br><br>
+    Result Division:<input type="text" id="ketqua" value=""/>
+</form>
+</body>
+</html>

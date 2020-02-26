@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script >
+        function chuyendoi() {
+            let nhap=document.getElementById("nhap").value
+            let luachon1=document.getElementById("luachon1").value
+            let luachon2=document.getElementById("luachon2").value
+            let ketqua=document.getElementById('ketqua')
+            if (luachon1 == "VND" && luachon2 == "USD"){
+                ketqua.value=parseInt(nhap)/23000+" USD"
+            } else if (luachon1 =="USD" && luachon2 == "VND"){
+                ketqua.value=parseInt(nhap)*23000+" VND"
+            } else {ketqua.value="chon loai tien can quy doi"}
+
+        }
+    </script>
+
+    <form>
+
+               <input type="text" id="nhap" value="" />
+
+               <select id="luachon1">
+                   <option value="VND">VND</option>
+                   <option value="USD">USD</option>
+               </select>
+
+               <select id="luachon2">
+                   <option value="VND">VND</option>
+                   <option value="USD">USD</option>
+               </select>
+
+               <button type="button" onclick="chuyendoi()">Convert</button>
+
+               <input text="text" id="ketqua" value=""/>
+
+    </form>
+</body>
+</html>

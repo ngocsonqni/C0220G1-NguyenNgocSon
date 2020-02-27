@@ -4,6 +4,12 @@
 <head>
     <meta charset="UTF-8">
     <title>YeuCau1</title>
+    <style>
+        table, tr, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
 </head>
 <body>
     <table border="1">
@@ -68,7 +74,7 @@
             let rentDay=prompt('Xin vui long nhap vao so ngay thue:','4');
             let service=prompt('Xin vui long nhap vao loai dich vu:','Villa');
             let roomType=prompt('Xin vui long nhap vao loai phong thue:','Vip');
-            alert('Cam on ban da nhap day du thong tin!')
+            alert('Cam on ban da nhap day du thong tin!');
             let cost=(service=='Villa')?
                     500:
                     (service=='House')?

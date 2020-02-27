@@ -57,7 +57,6 @@
      </tr>
     </table>
     <script>
-            let Cost;
             let name = prompt("Xin vui long nhap vao ten:",'nguyen ngoc son');
             let CMND=prompt('xin vui long nhap vao so CMND','212402345');
             let date=prompt('Xin vui long nhap vao ngay thang nam sinh:','07/06/1994');
@@ -70,13 +69,11 @@
             let service=prompt('Xin vui long nhap vao loai dich vu:','Villa');
             let roomType=prompt('Xin vui long nhap vao loai phong thue:','Vip');
             alert('Cam on ban da nhap day du thong tin!')
-                if (service == 'Villa') {
-                    Cost = 500
-                } else if (service == 'House') {
-                    Cost = 300
-                } else if (service == 'Room') {
-                    Cost = 100
-                }
+            let cost=(service=='Villa')?
+                    500:
+                    (service=='House')?
+                        300:
+                        (service=='Room')?100:'';
             document.getElementById('name').innerText =name;
             document.getElementById('cmnd').innerText =CMND;
             document.getElementById('date').innerText =date;
@@ -88,7 +85,7 @@
             document.getElementById('rentDay').innerText =rentDay;
             document.getElementById('service').innerText =service;
             document.getElementById('roomType').innerText =roomType;
-            document.getElementById('cost').innerHTML=parseInt(Cost)*parseInt(rentDay)*(1- parseInt(discount)/100)+"$"
+            document.getElementById('cost').innerHTML=parseInt(cost)*parseInt(rentDay)*(1- parseInt(discount)/100)+"$"
     </script>
 
 </body>

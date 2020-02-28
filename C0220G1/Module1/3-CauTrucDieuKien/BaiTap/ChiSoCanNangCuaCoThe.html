@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ChiSoCanNangCuaCoThe</title>
+</head>
+<body>
+    <p>Weight:</p>
+    <input type="text" id="Weight" value=""/>
+    <p>Height:</p>
+    <input type="text" id="Height" value=""/><br><br>
+    <button type="button" onclick="bmi()" value="">BMI:</button>
+    <input type="text" id="bmi" value=""/><br>
+    <p>Interpretation:</p>
+    <input type="text" id="interpretation" value=""/>
+    <script>
+        function bmi() {
+            let Weight=document.getElementById('Weight').value;
+            let Height=document.getElementById('Height').value;
+            let bmi=document.getElementById('bmi');
+
+            bmi.value=Weight/(Height*Height);
+            let interpretation=document.getElementById('interpretation');
+            interpretation.value=(bmi.value<18.5)?
+                'Underweight': (bmi.value<25)?
+                    'Nomal':(bmi.value<30)?
+                    'OverWeight':'Obese';
+
+        }
+    </script>
+</body>
+</html>

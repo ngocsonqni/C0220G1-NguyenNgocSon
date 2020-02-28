@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>CauLenhSwitchCase</title>
+</head>
+<body>
+    <input type="number" min="1" max="12" id='thang' value="" />
+    <button type="button" onclick='numOfDay()' value="">Tinh So Ngay</button>
+    <input type="text" id="display"  value=""/>
+    <script>
+        function numOfDay() {
+            let thang=document.getElementById('thang').value*1;
+            let display=document.getElementById('display');
+            if (thang<1||thang>12){
+                display.value='nhap so tu 1 den 12'
+            }
+            else {
+                switch (thang) {
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        display.value = 'Thang ' + thang + ' co 30 ngay';
+                        break;
+                    case 2:
+                        display.value = 'Thang 2 co 28 hoac 29 ngay';
+                        break;
+                    default:
+                        display.value = 'Thang ' + thang + ' co 31 ngay'
+                }
+            }
+        }
+    </script>
+</body>
+</html>

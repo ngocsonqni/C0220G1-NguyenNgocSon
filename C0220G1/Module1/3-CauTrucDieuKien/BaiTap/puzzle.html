@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>puzzle</title>
+</head>
+<body>
+<div style="margin:auto;max-width:940px;" >
+    <img  id="image1" src="image/a1.jpg" onclick="change('image1')"/>
+    <img id="image2" src="image/b2.jpg" onclick="change('image2')"/>
+    <img id="image3" src="image/a3.jpg" onclick="change('image3')"/>
+    <img id="image4" src="image/a4.jpg" onclick="change('image3')"/>
+    <img id="image5" src="image/a5.jpg" onclick="change('image5')"/>
+</div>
+<script>
+    function change(changeImage) {
+        image1=document.getElementById("image1");
+        image2=document.getElementById("image2");
+        image3=document.getElementById("image3");
+        image4=document.getElementById("image4");
+        image5=document.getElementById("image5");
+        let i1=image1.src.substr(image1.src.lastIndexOf('.jpg')-2,2);
+        let i2=image2.src.substr(image2.src.lastIndexOf('.jpg')-2,2);
+        let i3=image3.src.substr(image3.src.lastIndexOf('.jpg')-2,2);
+        let i4=image4.src.substr(image4.src.lastIndexOf('.jpg')-2,2);
+        let i5=image5.src.substr(image5.src.lastIndexOf('.jpg')-2,2);
+        if (changeImage=='image1'){
+
+            if (i1=='a1') {
+                image1.src ="image/b1.jpg";
+                i1='b1';
+            }
+            else {
+                image1.src ="image/a1.jpg";
+                i1='a1';
+            }
+        }
+        if (changeImage=='image2'){
+            if (i2=='a2') {
+                image2.src ="image/b2.jpg";
+                i2='b2';
+            }
+            else {
+                image2.src ="image/a2.jpg";
+                i2='a2';
+            }
+        }
+        if (changeImage=='image3'){
+            if (i3=='a3') {
+                image3.src ="image/b3.jpg";
+                i3='b3';
+            }
+            else {
+                image3.src ="image/a3.jpg";
+                i3='b3';
+            }
+        }
+        if (changeImage=='image4'){
+            if (i4=='a4') {
+                image4.src ="image/b4.jpg";
+                i4='b4';
+            }
+            else {
+                image4.src ="image/a4.jpg";
+                i4='a4';
+            }
+        }
+        if (changeImage=='image5'){
+            if (i5=='a5') {
+                image5.src ="image/b5.jpg";
+                i5='b5';
+            }
+            else {
+                image5.src ="image/a5.jpg";
+                i5='a5';
+            }
+        }
+
+
+        if (i1==i2 && i2==i3 && i3==i4 && i4==i5){
+            alert("done");
+        }
+
+    }
+</script>
+</body>
+</html>

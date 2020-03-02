@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>SuDungVongLapDoWhile</title>
+</head>
+<body>
+    <p id="number"></p>
+    <script>
+        let total="";
+        let num="";
+        do {
+            num = prompt("Enter a number: ")*1;
+            alert('so ban vua nhap la: '+num)
+            if (num>=1 && num<=10){
+                total=total*1+num;
+                }
+
+            }
+        while (num>=1 && num<=10);
+        document.getElementById('number').innerText=total;
+    </script>
+</body>
+</html>

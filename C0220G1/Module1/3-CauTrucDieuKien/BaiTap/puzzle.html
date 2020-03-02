@@ -9,7 +9,7 @@
     <img  id="image1" src="image/a1.jpg" onclick="change('image1')"/>
     <img id="image2" src="image/b2.jpg" onclick="change('image2')"/>
     <img id="image3" src="image/a3.jpg" onclick="change('image3')"/>
-    <img id="image4" src="image/a4.jpg" onclick="change('image3')"/>
+    <img id="image4" src="image/a4.jpg" onclick="change('image4')"/>
     <img id="image5" src="image/a5.jpg" onclick="change('image5')"/>
 </div>
 <script>
@@ -52,7 +52,7 @@
             }
             else {
                 image3.src ="image/a3.jpg";
-                i3='b3';
+                i3='a3';
             }
         }
         if (changeImage=='image4'){
@@ -75,9 +75,7 @@
                 i5='a5';
             }
         }
-
-
-        if (i1==i2 && i2==i3 && i3==i4 && i4==i5){
+        if (i1.substr(0,1)==i2.substr(0,1) && i2.substr(0,1)==i3.substr(0,1) && i3.substr(0,1)==i4.substr(0,1) && i4.substr(0,1)==i5.substr(0,1)){
             alert("done");
         }
 

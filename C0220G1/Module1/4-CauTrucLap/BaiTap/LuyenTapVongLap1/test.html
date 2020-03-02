@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Ung Dung May Tinh</title>
+</head>
+<body>
+<input type="text" id="so1">
+<input type="text" id="so2">
+<button type="button" value="+" onclick="calculator(this.value)"> Addition (+) </button>
+<button type="button" value="-" onclick="calculator(this.value)"> Subtraction (-) </button>
+<button type="button" value="*" onclick="calculator(this.value)"> Multiplication (*) </button>
+<button type="button" value="/" onclick="calculator(this.value)"> Divison (/) </button><br>
+<input type="text" id="ketqua">
+<script>
+    function calculator(mt1) {
+        let so1 = parseInt(document.getElementById("so1").value);
+        let so2 = parseInt(document.getElementById("so2").value);
+        let ketqua = document.getElementById("ketqua");
+        if (mt1 == "+") {
+            ketqua.value = so1 + so2;
+        }
+        else if (mt1 == "-") {
+            ketqua.value = so1 - so2;
+        }
+        else if (mt1 == "*") {
+            ketqua.value = so1 * so2;
+        }
+        else if (mt1 == "/") {
+            ketqua.value = so1 / so2;
+        }
+        else {
+            ketqua.value = ketqua.value + mt1;
+        }
+    }
+</script>
+</body>
+</html>

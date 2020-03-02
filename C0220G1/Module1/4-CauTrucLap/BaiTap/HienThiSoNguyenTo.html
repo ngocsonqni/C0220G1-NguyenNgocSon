@@ -5,27 +5,31 @@
     <title>HienThiSoNguyenTo</title>
 </head>
 <body>
-    <script>
-        let number=prompt('nhap so luong so nguyen to can in ra: ');
-        let count=0*0;
-        let n=2*1;
-        while (count<number) {
-            if (n==2){
-                document.write(n+'<br/>');
-                count++;
-            } else{
-                for (let i=2;i<=(n-1);i++){
-                    if(n%i==0){
-                        break;
-                    } else {
-                        document.write(n+'<br/>');
-                        count++;
-                        break;
-                        }
+<script>
+    let number=prompt('nhap so luong so nguyen to can in ra: ');
+    let count=0*0;
+    let n=2*1;
+    let i;
+    let j=0;
+    while (count<number) {
+        if (n==2){
+            document.write(n+'<br/>');
+            count++;
+        } else{
+            for (i=2;i<=(n-1);i++){
+                if(n%i==0){
+                    j=1;
+                    break;
                 }
             }
-        n++
+            if (j==0){
+                document.write(n+'<br/>');
+                count++;
+            } else {j=0}
+
         }
-    </script>
+        n++
+    }
+</script>
 </body>
 </html>

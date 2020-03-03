@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>4-TinhSoDauTienFiboChiaHetCho5</title>
+</head>
+<body>
+    <script>
+        let fibo=0;
+        let a=1;
+        let b=0;
+        let x;
+        while (fibo==0){
+            x=a;
+            a=a+b;
+            b=x;
+            if (b%5==0){
+                document.write(b+' la so fibonacci dau tien chia het cho 5');
+                fibo=1;
+            }
+        }
+    </script>
+</body>
+</html>

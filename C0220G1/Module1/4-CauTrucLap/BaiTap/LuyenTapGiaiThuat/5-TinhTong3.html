@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-TinhTong3</title>
+</head>
+<body>
+<script>
+    let n=prompt('Nhap gia tri cua n:');
+    let total=0;
+    let show='';
+    let giaithua=1;
+    document.write('S = ')
+    for (let i=1;i<=n;i++){
+        for (let j=1;j<=(2*i-1);j++){
+            giaithua*=j;
+        }
+        total+=1/giaithua;
+        giaithua=1;
+        if (i==1){
+            show+=' 1'
+        } else{
+                show+=' + 1/'+(2*i-1)+'!';
+            }
+    }
+    document.write(show+' = '+total)
+
+</script>
+</body>
+</html>

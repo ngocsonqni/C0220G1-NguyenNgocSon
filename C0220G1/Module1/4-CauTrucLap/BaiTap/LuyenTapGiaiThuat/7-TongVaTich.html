@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>7-TongVaTich</title>
+</head>
+<body>
+    <script>
+        let m=prompt('nhap m:');
+        let cong=0;
+        let nhan=0;
+        let showCong='';
+        let showNhan='';
+        for(let i=1;i<=m.length;i++) {
+            if (i == 1) {
+                showCong += m.substr(i - 1, 1);
+                showNhan += m.substr(i - 1, 1);
+            } else {
+
+            showCong += '+' + m.substr(i - 1, 1);
+            showNhan += '*' + m.substr(i - 1, 1);
+                }
+        }
+        cong=eval(showCong);
+        nhan=eval(showNhan);
+        document.write('so vua nhap la: '+m+'<br/>');
+        document.write('S = '+showCong+' = '+cong+'<br/>');
+        document.write('P = '+showNhan+' = '+nhan);
+    </script>
+</body>
+</html>

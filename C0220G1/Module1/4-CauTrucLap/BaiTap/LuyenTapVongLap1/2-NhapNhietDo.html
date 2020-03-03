@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>NhapNhietDo</title>
+</head>
+<body>
+    <p id="number"></p>
+    <script>
+        let nhietDo;
+        do {
+        nhietDo=prompt('Nhap nhiet do hien tai vao:');
+        if (nhietDo>100){
+            alert('Nhiet do tren 100, de nghi giam nhiet do xuong:')
+        } else if (nhietDo<20){
+            alert('Nhiet do duoi 20, de nghi tang nhiet do xuong:')
+        }
+        }
+        while (nhietDo<20 || nhietDo >100);
+        document.write('<h1>'+nhietDo+' do C'+'</h1>');
+    </script>
+</body>
+</html>

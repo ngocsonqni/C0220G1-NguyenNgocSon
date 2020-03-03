@@ -1,0 +1,156 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DocSoNguyen3ChuSo</title>
+</head>
+<body>
+    <script>
+
+        while (true) {
+            let num = prompt('nhap so nguyen co 3 chu so:');
+            let a = (num - num % 100) / 100;
+            let b = (num - a * 100 - num % 10) / 10;
+            let c = num - a * 100 - b * 10;
+            switch (a) {
+                case 1:
+                    a = 'one';
+                    break;
+                case 2:
+                    a = 'two';
+                    break;
+                case 3:
+                    a = 'three';
+                    break;
+                case 4:
+                    a = 'four';
+                    break;
+                case 5:
+                    a = 'five';
+                    break;
+                case 6:
+                    a = 'six';
+                    break;
+                case 7:
+                    a = 'seven';
+                    break;
+                case 8:
+                    a = 'eight';
+                    break;
+                case 9:
+                    a = 'nine';
+                    break;
+            }
+            switch (b) {
+                case 0:
+                    b = '';
+                    break;
+                case 1:
+                    switch (c) {
+                        case 0:
+                            c = 'ten ';
+                            break;
+                        case 1:
+                            c = 'eleven ';
+                            break;
+                        case 2:
+                            c = 'twelve ';
+                            break;
+                        case 3:
+                            c = 'thirteen ';
+                            break;
+                        case 4:
+                            c = 'fourteen ';
+                            break;
+                        case 5:
+                            c = 'fifteen ';
+                            break;
+                        case 6:
+                            c = 'sixteen ';
+                            break;
+                        case 7:
+                            c = 'seventeen ';
+                            break;
+                        case 8:
+                            c = 'eighteen ';
+                            break;
+                        case 9:
+                            c = 'nineteen ';
+                            break;
+                    }
+                    break;
+                case 2:
+                    b = 'twenty ';
+                    break;
+                case 3:
+                    b = 'thirty ';
+                    break;
+                case 4:
+                    b = 'fourty ';
+                    break;
+                case 5:
+                    b = 'fifty ';
+                    break;
+                case 6:
+                    b = 'sixty ';
+                    break;
+                case 7:
+                    b = 'seventy ';
+                    break;
+                case 8:
+                    b = 'eighty ';
+                    break;
+                case 9:
+                    b = 'ninety ';
+                    break;
+            }
+            if (b != 1) {
+                switch (c) {
+                    case 1:
+                        c = 'one';
+                        break;
+                    case 2:
+                        c = 'two';
+                        break;
+                    case 3:
+                        c = 'three';
+                        break;
+                    case 4:
+                        c = 'four';
+                        break;
+                    case 5:
+                        c = 'five';
+                        break;
+                    case 6:
+                        c = 'six';
+                        break;
+                    case 7:
+                        c = 'seven';
+                        break;
+                    case 8:
+                        c = 'eight';
+                        break;
+                    case 9:
+                        c = 'nine';
+                        break;
+                    case 0:
+                        c=''; break;
+                }
+            }
+            if (a == 0) {
+                if (b == 'and ') {
+                    alert(c)
+                } else if (typeof (b) == 'string') {
+                    alert(b + c)
+                } else {
+                    alert(c)
+                }
+            } else if (b==1){
+                alert(a + ' hundred and ' + c);
+                 } else {
+                    alert(a + ' hundred and ' + b + c);
+                    }
+        }
+    </script>
+</body>
+</html>

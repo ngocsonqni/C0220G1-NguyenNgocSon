@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>6-GiaiThuaChanLe</title>
+</head>
+<body>
+    <script>
+        let n=prompt('nhap n:');
+        let giaithua=1;
+        let show='';
+        document.write('n!! = ')
+        if (n%2==0){
+            for (let j=2;j<=n;j+=2){
+                giaithua*=j;
+                if (j==2){
+                    show+=j;
+                }else{
+                    show+=' *'+j;
+                     }
+            }
+        }else {
+            for (let j=1;j<=n;j+=2){
+                giaithua*=j;
+                if (j==1){
+                    show+=j;
+                }else{
+                    show+=' *'+j;
+                }
+            }
+        }
+        document.write(show+' = '+giaithua)
+    </script>
+</body>
+</html>

@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>5-Tong20SoFibonacciDauTien</title>
+</head>
+<body>
+    <script>
+        let fibo=20;
+        let a=1;
+        let b=0;
+        let x;
+        let tong=0;
+        document.write('tong 20 so fibonacci dau tien: ')
+        while (fibo>0){
+            x=a;
+            a=a+b;
+            b=x;
+            tong+=b;
+            fibo--;
+            if (fibo>0){
+                document.write(b+' + ')
+            } else {document.write(b+' = ')}
+        }
+        document.write(tong);
+    </script>
+</body>
+</html>

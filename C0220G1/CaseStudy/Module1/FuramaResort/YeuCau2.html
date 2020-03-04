@@ -1,0 +1,153 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau2</title>
+    <style>
+        table, tr, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+    </style>
+</head>
+<body>
+    <button type="button" onclick="customer()" style="width: 160px; height: 40px;color: #2196F3" value="menu">Menu Customer</button>
+    <script>
+        //khai bao bien
+        let name ='Nguyen Ngoc Son';
+        let idCard='212402345';
+        let birthDay='07/06/1994';
+        let email='sonnn.qni@gmail.com';
+        let address='Da Nang';
+        let typeCustomer='Diamond';
+        let accompanying='2';
+        let rentDay='4';
+        let typeService='Villa';
+        let typeRoom='Vip';
+
+        //gia loai dich vu
+        let cost=(typeService=='Villa')?
+            500:
+            (typeService=='House')?
+                300:
+                (typeService=='Room')?100:'';
+
+        //tinh giam gia va so tien phai tra
+        let discountAdd=(address=='Da Nang')?20:(address=='Hue')?10:(address=='Quang Nam')?5:0;
+        let discountDay=(rentDay>=7)?30:(rentDay>=5)?20:(rentDay>=2)?10:0;
+        let discountTypeCus=(typeCustomer=='Diamond')?15:(typeCustomer=='Platium')?10:
+                            (typeCustomer=='Gold')?5:(typeCustomer=='Silver')?2:0;
+         let discount=discountAdd+discountDay+discountTypeCus;
+         let totalPays=parseInt(cost)*parseInt(rentDay)-discount;
+
+        //tao menu
+        function customer() {
+            let customerMenu;
+            do {customerMenu = prompt('0. Exit'+'\n'+
+                    '1. Show Information Customer' + '\n' +
+                    '2. Edit Information Customer' + '\n' +
+                    '3. Show the amount to be paid after discount') * 1;
+                switch (customerMenu) {
+                        case 0: break;
+                        case 1: {
+                            alert('Name: ' + name + '\n' +
+                                'Id Card: ' + idCard + '\n' +
+                                'Birth Day: ' + birthDay + '\n' +
+                                'Email: ' + email + '\n' +
+                                'Address: ' + address + '\n' +
+                                'Type Customer: ' + typeCustomer + '\n' +
+                                'Discount: ' + discount + '\n' +
+                                'Accompanying: ' + accompanying + '\n' +
+                                'Rent Day: ' + rentDay + '\n' +
+                                'Type Service: ' + typeService + '\n' +
+                                'Type Room: ' + typeRoom + '\n');
+                        }
+                            break;
+                        case 2: {
+                            let customerEdit;
+                            do {
+                                customerEdit = prompt('Select the type to change: ' + '\n' +
+                                    '0. Exit' + '\n' +
+                                    '1. Name: ' + name + '\n' +
+                                    '2. Id Card: ' + idCard + '\n' +
+                                    '3. Birth Day: ' + birthDay + '\n' +
+                                    '4. Email: ' + email + '\n' +
+                                    '5. Address: ' + address + '\n' +
+                                    '6. Type Customer: ' + typeCustomer + '\n' +
+                                    '7. Discount: ' + discount + '\n' +
+                                    '8. Accompanying: ' + accompanying + '\n' +
+                                    '9. Rent Day: ' + rentDay + '\n' +
+                                    '10. Type Service: ' + typeService + '\n' +
+                                    '11. Type Room: ' + typeRoom + '\n') * 1;
+                                switch (customerEdit) {
+                                    case 1:
+                                        name = prompt("Xin vui long nhap vao ten:");
+                                        break;
+                                    case 2:
+                                        idCard = prompt('xin vui long nhap vao so CMND');
+                                        break;
+                                    case 3:
+                                        birthDay = prompt('Xin vui long nhap vao ngay thang nam sinh:');
+                                        break;
+                                    case 4:
+                                        email = prompt('Xin vui long nhap vao Email:');
+                                        break;
+                                    case 5:
+                                        address = prompt('Xin vui long nhap vao dia chi:');
+                                        break;
+                                    case 6:
+                                        typeCustomer = prompt('Xin vui long nhap vao loai customer:');
+                                        break;
+                                    case 7:
+                                        discount = prompt('Xin vui long nhap vao giam gia:');
+                                        break;
+                                    case 8:
+                                        accompanying = prompt('Xin vui long nhap vao so luong di kem:');
+                                        break;
+                                    case 9:
+                                        rentDay = prompt('Xin vui long nhap vao so ngay thue:');
+                                        break;
+                                    case 10:
+                                        typeService = prompt('Xin vui long nhap vao loai dich vu:');
+                                        break;
+                                    case 11:
+                                        typeRoom = prompt('Xin vui long nhap vao loai phong thue:');
+                                        break;
+                                }
+                                if (customerEdit != 0) {
+                                    alert('Name: ' + name + '\n' +
+                                        'Id Card: ' + idCard + '\n' +
+                                        'Birth Day: ' + birthDay + '\n' +
+                                        'Email: ' + email + '\n' +
+                                        'Address: ' + address + '\n' +
+                                        'Type Customer: ' + typeCustomer + '\n' +
+                                        'Discount: ' + discount + '\n' +
+                                        'Accompanying: ' + accompanying + '\n' +
+                                        'Rent Day: ' + rentDay + '\n' +
+                                        'Type Service: ' + typeService + '\n' +
+                                        'Type Room: ' + typeRoom + '\n' +
+                                        'Total Pays: ' + totalPays);
+                                }
+                            } while (customerEdit != 0);
+                            break;
+                        }
+                        case 3: {
+                            discountAdd = (address == 'Da Nang') ? 20 : (address == 'Hue') ? 10 : (address == 'Quang Nam') ? 5 : 0;
+                            discountDay = (rentDay >= 7) ? 30 : (rentDay >= 5) ? 20 : (rentDay >= 2) ? 10 : 0;
+                            discountTypeCus = (typeCustomer == 'Diamond') ? 15 : (typeCustomer == 'Platium') ? 10 :
+                                (typeCustomer == 'Gold') ? 5 : (typeCustomer == 'Silver') ? 2 : 0;
+                            discount = discountAdd + discountDay + discountTypeCus;
+                            totalPays = parseInt(cost) * parseInt(rentDay) - discount;
+                            alert('Amount to be paid after discount: ' + totalPays)
+                            break;
+                        }
+                        default:
+                            alert('Please select the function included in the menu');
+                            break;
+                    }
+            } while (customerMenu!=0)
+        }
+    </script>
+
+</body>
+</html>

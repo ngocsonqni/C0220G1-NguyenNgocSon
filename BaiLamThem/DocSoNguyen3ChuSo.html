@@ -147,9 +147,10 @@
                 }
             } else if (b==1){
                 alert(a + ' hundred and ' + c);
-                 } else {
-                    alert(a + ' hundred and ' + b + c);
-                    }
+                 } else if (b==0 && c==0){
+                    alert(a + ' hundred ')
+                        } else {alert(a + ' hundred and ' + b + c);
+                            }
         }
     </script>
 </body>

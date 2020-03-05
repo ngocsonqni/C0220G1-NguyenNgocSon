@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+    <script>
+        let a=[21,4,6,57,3,99,4,81,7,29];
+        let average=0;
+        let max=a[0];
+        document.write('chuoi :'+a+'<br>');
+        for (let i=1;i<a.length;i++){
+            if (a[i]>max){
+                max=a[i];
+                average +=a[i];
+            }
+        }
+        average =average /(a.length+1);
+        document.write('max: '+max+'<br>');
+        document.write('average: '+average )
+    </script>
+</body>
+</html>

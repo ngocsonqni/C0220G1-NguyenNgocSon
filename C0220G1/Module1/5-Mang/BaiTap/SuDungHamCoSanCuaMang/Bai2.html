@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai2</title>
+</head>
+<body>
+    <script>
+        let num=prompt('nhap so:');
+        let ar=Array();
+        for (let i=0;i<num.length;i++){
+            ar[i]=num.substr(i,1)*1;
+
+        }
+        document.write(ar[0])
+        for (let i=1;i<num.length;i++){
+            if (ar[i-1]%2==0 &&(ar[i])%2==0){
+                document.write('-'+ar[i]);
+            } else {
+                document.write(ar[i])
+            }
+        }
+
+    </script>
+</body>
+</html>

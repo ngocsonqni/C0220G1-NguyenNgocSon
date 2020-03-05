@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+    <script>
+        let a=[21,4,6,57,3,99,4,81,7,29];
+        document.write('chuoi : '+a+'<br>');
+        let dau=0;
+        let cuoi=a.length;
+        let tam;
+        while (dau<cuoi){
+            tam=a[dau];
+            a[dau]=a[cuoi];
+            a[cuoi]=tam;
+            dau++;
+            cuoi--;
+        }
+        document.write('chuoi : '+a);
+    </script>
+</body>
+</html>

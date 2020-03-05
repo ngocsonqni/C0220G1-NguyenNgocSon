@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai9</title>
+</head>
+<body>
+    <script>
+        let a=[21,4,6,57,3,99,4,81,7,29];
+        let b=[35,89,7,69,8,3,4,73,2,1];
+        document.write('chuoi a: '+a+'<br>');
+        document.write('chuoi b: '+b+'<br>');
+        let c=Array();
+        for (let i=0;i<20;i++){
+            if (i<10){
+                c[i]=b[i]
+            } else {
+                c[i]=a[i-10]
+            }
+        }
+        document.write('chuoi c: '+c)
+    </script>
+</body>
+</html>

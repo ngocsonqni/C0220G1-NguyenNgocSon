@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai1</title>
+</head>
+<body>
+    <script>
+        let myColor = ["Red", "Green", "White", "Black"];
+        let colorStr='';
+        for (let i=0;i<myColor.length;i++) {
+            if (i < (myColor.length - 1)) {
+                colorStr += myColor[i] + ','
+            } else {colorStr+=myColor[i]}
+        }
+        document.write(colorStr)
+    </script>
+</body>
+</html>

@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>DaoNguocCacPhanTuTrongMang</title>
+</head>
+<body>
+    <script>
+        let x = [-3, 5, 1, 3, 2, 10];
+        document.write(x+'<br>')
+        let dau=0;
+        let cuoi=x.length-1;
+        while (dau<cuoi){
+            let b=x[dau];
+            x[dau]=x[cuoi];
+            x[cuoi]=b;
+            dau++;
+            cuoi--;
+        }
+        document.write(x)
+    </script>
+</body>
+</html>

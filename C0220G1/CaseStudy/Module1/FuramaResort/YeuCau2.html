@@ -3,15 +3,31 @@
 <head>
     <meta charset="UTF-8">
     <title>YeuCau2</title>
-    <style>
-        table, tr, th {
-            border: 1px solid black;
-            border-collapse: collapse;
-        }
-    </style>
+        <style>
+            .button {
+                background-color: #4CAF50; /* Green */
+                border: 1px solid green;
+                color: white;
+                padding: 15px 32px;
+                text-align: center;
+                text-decoration: none;
+                display: inline-block;
+                font-size: 16px;
+                cursor: pointer;
+                float: left;
+            }
+
+            .button:not(:last-child) {
+                border-right: none; /* Prevent double borders */
+            }
+
+            .button:hover {
+                background-color: #3e8e41;
+            }
+        </style>
 </head>
 <body>
-    <button type="button" onclick="customer()" style="width: 160px; height: 40px;color: #2196F3" value="menu">Menu Customer</button>
+    <button  class="button" type="button" onclick="customer()"  value="menu">Menu Customer</button>
     <script>
         //khai bao bien
         let name ='Nguyen Ngoc Son';
@@ -43,14 +59,16 @@
         //tao menu
         function customer() {
             let customerMenu;
-            do {customerMenu = prompt('0. Exit'+'\n'+
+            do {customerMenu = prompt('Menu:'+'\n'+
+                    '0. Exit'+'\n'+
                     '1. Show Information Customer' + '\n' +
                     '2. Edit Information Customer' + '\n' +
                     '3. Show the amount to be paid after discount') * 1;
                 switch (customerMenu) {
                         case 0: break;
                         case 1: {
-                            alert('Name: ' + name + '\n' +
+                            alert('Information'+'\n'+
+                                'Name: ' + name + '\n' +
                                 'Id Card: ' + idCard + '\n' +
                                 'Birth Day: ' + birthDay + '\n' +
                                 'Email: ' + email + '\n' +
@@ -60,7 +78,7 @@
                                 'Accompanying: ' + accompanying + '\n' +
                                 'Rent Day: ' + rentDay + '\n' +
                                 'Type Service: ' + typeService + '\n' +
-                                'Type Room: ' + typeRoom + '\n');
+                                'Type Room: ' + typeRoom);
                         }
                             break;
                         case 2: {
@@ -78,7 +96,7 @@
                                     '8. Accompanying: ' + accompanying + '\n' +
                                     '9. Rent Day: ' + rentDay + '\n' +
                                     '10. Type Service: ' + typeService + '\n' +
-                                    '11. Type Room: ' + typeRoom + '\n') * 1;
+                                    '11. Type Room: ' + typeRoom) * 1;
                                 switch (customerEdit) {
                                     case 1:
                                         name = prompt("Xin vui long nhap vao ten:");
@@ -115,7 +133,8 @@
                                         break;
                                 }
                                 if (customerEdit != 0) {
-                                    alert('Name: ' + name + '\n' +
+                                    alert('Information edited:'+'\n'+
+                                        'Name: ' + name + '\n' +
                                         'Id Card: ' + idCard + '\n' +
                                         'Birth Day: ' + birthDay + '\n' +
                                         'Email: ' + email + '\n' +
@@ -125,8 +144,7 @@
                                         'Accompanying: ' + accompanying + '\n' +
                                         'Rent Day: ' + rentDay + '\n' +
                                         'Type Service: ' + typeService + '\n' +
-                                        'Type Room: ' + typeRoom + '\n' +
-                                        'Total Pays: ' + totalPays);
+                                        'Type Room: ' + typeRoom);
                                 }
                             } while (customerEdit != 0);
                             break;

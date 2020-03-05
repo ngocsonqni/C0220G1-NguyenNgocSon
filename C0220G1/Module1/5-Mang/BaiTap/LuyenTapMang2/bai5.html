@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+    <script>
+        let str1=prompt('nhap chuoi dau tien:');
+        let str2=prompt('nhap chuoi thu 2:');
+        let a= Array();
+        let b= Array();
+        for (let i=0;i<str1.length;i++){
+            a[i]=str1.substr(i,1)
+        }
+        for (let i=0;i<str2.length;i++){
+            b[i]=str2.substr(i,1)
+        }
+        document.write(a+'<br>');
+        document.write(b+'<br>');
+        let check= true;
+        if (a.length1!=b.length){check=false;}
+        for(let i=0;i<a.length;i++){
+            if (a[i]!=b[i]){
+                check=false;
+                break;
+            }
+        }
+        if (check){
+            document.write('2 chuoi nay giong nhau');
+        } else {
+            document.write('2 chuoi nay khac nhau');
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+    <script>
+        let chuoi=prompt('nhap chuoi:');
+        let low=chuoi.toLowerCase();
+        let up=chuoi.toUpperCase();
+        let str=Array();
+        let show='';
+        for (let i=0;i<chuoi.length;i++){
+            str[i]=chuoi.substr(i,1);
+            if (str[i]==low.substr(i,1)){
+                str[i]=up.substr(i,1)
+            }else if (str[i]==up.substr(i,1)) {
+                    str[i] = low.substr(i, 1)
+                    }
+            show+=str[i]
+        }
+        document.write('chuoi "'+chuoi+'" duoc chuyen doi thanh "'+show+'"')
+    </script>
+</body>
+</html>

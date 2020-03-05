@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai8</title>
+</head>
+<body>
+    <script>
+        let a=[21,4,6,57,3,99,4,81,7,29];
+        let b=Array();
+        let max=a[0];
+        let checkTrung=true;
+        let del;
+        document.write('chuoi :'+a+'<br>');
+        for (let i=0;i<a.length;i++) {
+            for (let j = 0; j < a.length; j++) {
+                if (a[j] > max) {
+                    max = a[j];
+                }
+            }
+            b.push(max);
+            for (let m=0;m<a.length;m++){
+                if (max==a[m]&& checkTrung){
+                    a[m]=0;
+                    checkTrung=false;
+                }
+            }
+            checkTrung=true;
+            max=0;
+        }
+
+        document.write('chuoi a sap xep giam dan: '+b);
+    </script>
+</body>
+</html>

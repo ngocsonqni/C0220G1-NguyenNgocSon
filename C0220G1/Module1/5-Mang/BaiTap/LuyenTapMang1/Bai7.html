@@ -8,14 +8,13 @@
     <script>
         let a=[21,4,6,57,3,99,4,81,7,29];
         let v=prompt('nhap so nguyen V:')*1;
-        let del;
         document.write('chuoi :'+a+'<br>'+'so nguyen v: '+v+'<br>');
         for (let i=0;i<a.length;i++){
             if (v==a[i]){
                 for (let j=i;j<(a.length-1);j++){
                     a[j]=a[j+1];
                 }
-                del=a.pop();
+                a.pop();
             }
         }
         document.write('chuoi: '+a)

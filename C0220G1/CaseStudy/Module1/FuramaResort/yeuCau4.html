@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau4</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="customer()"  value="menu">Menu Customer</button>
+<script>
+    let arrNameCustomers= Array();
+    //tao menu
+    function customer() {
+        let customerMenu;
+        let count=-1;
+        do {customerMenu = prompt('Menu:'+'\n'+
+            '0. Exit'+'\n'+
+            '1. Add Name Customer ' + '\n' +
+            '2. Delete Customer' + '\n' +
+            '3. Display Customers') * 1;
+            switch (customerMenu) {
+                case 0: break;
+                case 1:
+                    let cusAdd=prompt('nhap so luong customer ban muon them vao: ');
+                    for (let i=0;i<cusAdd;i++){
+                        count++;
+                        arrNameCustomers[count]=prompt('So luong customer ban muon them vao: '+ cusAdd+'\n'
+                            +'customer add: '+(i+1)+'\n');
+                    }
+                    alert('Danh sach custome hien co:'+'\n'
+                        +arrNameCustomers.sort().join('\n'));
+                    break;
+                case 2:
+                    let cusDel=prompt('Danh sach custome hien co:'+'\n'
+                                        +arrNameCustomers.join('\n')+'\n'
+                                        +'nhap customer ban muon xoa vao: ');
+                    for (let i=0;i<arrNameCustomers.length;i++){
+                        if (arrNameCustomers[i]==cusDel){
+                            if (i==0){
+                                arrNameCustomers.shift();
+                            } else  {
+                                    for (let j=i;j<(arrNameCustomers.length-1);j++){
+                                        arrNameCustomers[j]=arrNameCustomers[j+1];
+                                    }
+                                    arrNameCustomers.pop();
+                                }
+                            count--;
+                        }
+                    }
+                    alert('Danh sach custome hien co:'+'\n'
+                        +arrNameCustomers.sort().join('\n'));
+                    break;
+                case 3:
+                    alert('Danh sach custome hien co (duoc sap xep theo thu tu alphabel):'+'\n'
+                        +arrNameCustomers.sort().join('\n'));
+                    break;
+                default:
+                    alert('Please select the function included in the menu');
+                    break;
+            }
+        } while (customerMenu!=0)
+    }
+</script>
+
+</body>
+</html>

@@ -1,0 +1,241 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <title>JavaScript form validation - checking email</title>
+</head>
+<body>
+     <table border="1">
+         <tr>
+             <th>Ho Va Ten</th>
+             <th><input type="text" id="name" onblur="validateName()"></th>
+         </tr>
+         <tr>
+             <th>So CMND</th>
+             <th><input type="text" id="idCard" onblur="validateId()"></th>
+         </tr>
+         <tr>
+             <th>Ngay Thang Nam Sinh</th>
+             <th><input type="text" id="birthDay" onblur="validateDay()"></th>
+         </tr>
+         <tr>
+             <th>Email</th>
+             <th><input type="text" id="email" onkeypress="validateEmail()"></th>
+         </tr>
+         <tr>
+             <th>Dia Chi</th>
+             <th><input type="text" id="address" ></th>
+         </tr>
+         <tr>
+             <th>Loai Customer</th>
+             <th><input type="text" id="typeCustomer" ></th>
+         </tr>
+         <tr>
+             <th>Giam Gia</th>
+             <th><input type="text" id="discount" ></th>
+         </tr>
+         <tr>
+             <th>So Luong Di Kem</th>
+             <th><input type="text" id="accompanying" onblur="validateAccompanying()"></th>
+         </tr>
+         <tr>
+             <th>So Ngay Thue</th>
+             <th><input type="text" id="rentDay" onblur="validateRent()"></th>
+         </tr>
+         <tr>
+             <th>Loai Dich Vu</th>
+             <th><input type="text" id="typeService" ></th>
+         </tr>
+         <tr>
+             <th>Loai Phong Thue</th>
+             <th><input type="text" id="typeRoom" ></th>
+         </tr>
+         <tr>
+             <th>So Tien Phai Tra</th>
+             <th><input type="text" id="totalPays" ></th>
+         </tr>
+     </table>
+     <script>
+
+         //check birthday
+         function validateDay() {
+            let birthDay=document.getElementById('birthDay');
+            let check=true;
+            while (check){
+                let checkLength=false;
+                let checkNum=false;
+                for (let i=0;i<birthDay.value.length;i++){
+                    if (i==2 || i==5) {
+                        if (birthDay.value.substr(i, 1) != '/') {
+                            checkNum = true;
+                        }
+                    }
+                        else if (birthDay.value.substr(i, 1) - birthDay.value.substr(i, 1) != 0)
+                        {
+                            checkNum = true;
+                        }
+                }
+
+                if (birthDay.value.length!=10 ){
+                    checkLength=true;
+                }
+
+                //check day validation
+                let day=birthDay.value.substr(0,2)*1;
+                let month=birthDay.value.substr(3,2)*1;
+                let year=birthDay.value.substr(6,4)*1;
+                let maxDay;
+                let leap;
+                if (year % 4 == 0) {
+                    if (year%100==0){
+                        if (year%400==0){
+                            leap=true;
+                        }
+                        leap=false;
+                    }
+                    leap=true;
+                }
+                else {leap=false;
+                }
+                switch (month) {
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        maxDay = 30;
+                        break;
+                    case 2:
+                        if (leap) {
+                            maxDay=29;
+                        } else {
+                            maxDay=28;
+                        }
+                        break;
+                    default:
+                        maxDay = 31;
+                }
+                if (day<1|| day>maxDay ){
+                    alert('sai ngay sinh, yeu cau nhap dung ngay sinh');
+                    checkNum=true;
+                }
+                if (month<0 || month>12){
+                    alert('sai thang sinh, yeu cau nhap dung thang sinh');
+                    checkNum=true;
+                }
+
+                if (checkLength || checkNum){
+                   birthDay.value=prompt('Nhap sai cu phap cua birthday, yeu cau nhap lai!'+'\n'
+                                        +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                                        +'Luu y: Chi duoc nhap so tu 0-9');
+
+                }else {
+                    check=false;
+                }
+            }
+         }
+
+         //check id card
+         function validateId() {
+            let  idCard=document.getElementById('idCard');
+            let check=true;
+            while (check){
+                let checkLength=false;
+                let checkNum=false;
+                for (let i=0;i<idCard.value.length;i++){
+                    if (idCard.value.substr(i,1)-idCard.value.substr(i,1)!=0){
+                        checkNum=true;
+                        break;
+                    }
+                }
+                if (idCard.value.length!=8 ){
+                    checkLength=true;
+                }
+                if (checkLength || checkNum){
+                    idCard.value=prompt('Nhap sai cu phap cua id card, yeu cau nhap lai!'+'\n'
+                        +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+                        +'Luu y: Chi duoc nhap so tu 0-9');
+                }else {
+                    check=false;
+                }
+            }
+        }
+
+         //check email
+        function validateEmail(inputText) {
+            let email=document.getElementById('email');
+            let mailformat = /^\w+([\.-]?\w+)*@\w+([\.-]?\w+)*(\.\w{2,3})+$/;
+                while (!email.value.match(mailformat)) {
+                    email.value = prompt('Nhap sai cu phap cua email, yeu cau nhap lai!'+'\n'
+                        +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+                        +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)');
+                }
+        }
+
+         //check accompanying
+         function validateAccompanying() {
+             let accompanying=document.getElementById('accompanying');
+             let check=true;
+             while (check){
+                 check=false;
+                 for (let i=1;i<accompanying.value.length;i++) {
+                     if ((accompanying.value.substr(i, 1) - accompanying.value.substr(i, 1)) != 0) {
+                         check = true;
+                     }
+                 }
+                     if (accompanying.value*1<=0){
+                         check=true;
+                     }
+                     if (check){
+                         accompanying.value=prompt('Nhap sai cu phap cua accompanying, yeu cau nhap lai!'+'\n'
+                             +'Luu y: Gia tri nhap vao phai lon hon 0, Chi duoc nhap so (0-9)');
+                     }
+             }
+         }
+
+         //check Rent
+         function validateRent() {
+             let rentDay=document.getElementById('rentDay');
+             let check=true;
+             while (check){
+                 check=false;
+                 for (let i=1;i<rentDay.value.length;i++) {
+                     if ((rentDay.value.substr(i, 1) - rentDay.value.substr(i, 1)) != 0) {
+                         check = true;
+                     }
+                 }
+                 if (rentDay.value*1<=0){
+                     check=true;
+                 }
+                 if (check){
+                     rentDay.value=prompt('Nhap sai cu phap cua rent day, yeu cau nhap lai!'+'\n'
+                         +'Luu y: Gia tri nhap vao phai lon hon 0, Chi duoc nhap so (0-9)');
+                 }
+             }
+         }
+
+         //check Name
+         function validateName() {
+             let name=document.getElementById('name');
+             let up=name.value.toUpperCase();
+             let str=Array();
+             let show='';
+             for (let i=0;i<name.value.length;i++){
+                 str[i]=name.value.substr(i,1);
+             }
+             str[0]=up.substr(0,1);
+             for (let i=0;i<(name.value.length-1);i++){
+                 if (str[i]==' ' &&str[i+1]==' '){
+                     str[i]='';
+                 }else if (str[i]!=' '&& str[i-1]==' ') {
+                     str[i] = up.substr(i, 1)
+                 }
+             }
+             for (let i=0;i<name.value.length;i++){
+                 show+=str[i];
+             }
+             name.value=show.trim();
+
+         }
+    </script>
+</body>
+</html>

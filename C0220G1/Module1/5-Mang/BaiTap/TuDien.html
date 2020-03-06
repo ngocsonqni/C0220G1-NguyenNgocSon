@@ -8,12 +8,13 @@
     <script>
         while (true) {
             let input = prompt('nhap tu vao:');
-            let eng = ['i', 'want', 'sleep', 'now'];
+            let eng = ['i', 'want', 'sleep', 'now',];
             let vi = ['toi', 'muon', 'ngu', 'bay gio'];
             let show = '';
             for (let i = 0; i < eng.length; i++) {
                 if (input == eng[i]) {
                     show = vi[i];
+                    break;
                 }
             }
             if (show != '') {

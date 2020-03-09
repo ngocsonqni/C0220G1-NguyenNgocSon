@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>HamKiemTraSoNguyenTo</title>
+</head>
+<body>
+    <script>
+        let a= prompt('nhap so a can kiem tra')*1;
+        prime(a);
+        function prime(a) {
+            let j=0;
+            for (i=2;i<a;i++) {
+                if (a % i == 0) {
+                    j = 1;
+                    break;
+                }
+            }
+            if (j==0){
+                document.write('a la so nguyen to');
+            }else {
+                document.write('a khong phai so nguyen to')
+            }
+        }
+    </script>
+</body>
+</html>

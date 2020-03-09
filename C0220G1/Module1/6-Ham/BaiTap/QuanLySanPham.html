@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuanLySanPham</title>
+    <style>
+        table, tr, th {
+            border: 1px solid black;
+            border-collapse: collapse;
+        }
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="addSP()"  value="menu">Add product</button>
+<!--<button  class="button" type="button" onclick="showSP()"  value="menu">Display product</button>-->
+<button  class="button" type="button" onclick="editSP()"  value="menu">Edit product</button>
+<button  class="button" type="button" onclick="delSP()"  value="menu">delete product</button>
+<br><br><br>
+<table border="1" id="show"></table>
+    <script>
+        let a=Array();
+        function showSP() {
+            let show='';
+            show+='<tr>'+'<th>'+'So thu tu'+'</th>'+'<th>'+'Ten San pham'+'</th>'+'</tr>';
+            // document.write('<table border="1">'+'<tr>'+'<th>'+'So thu tu'+'</th>'+'<th>'+'Ten San pham'+'</th>'+'</tr>');
+                for (let i=1;i<=a.length;i++){
+                    show+='<tr>'+'<th>'+i+'</th>'+'<th>'+a[i-1]+'</th>'+'</tr>';
+                    // document.write('<tr>');
+                    // document.write('<th>'+i+'</th>');
+                    // document.write('<th>'+a[i-1]+'</th>');
+                    // document.write('</tr>');
+                }
+            document.getElementById('show').innerHTML=show;
+
+            // document.write('</table>');
+        }
+        function addSP() {
+            let aLength=prompt('nhap so luong them vao')*1;
+            for (let i=1;i<=aLength;i++) {
+                a.push(prompt('them san pham thu '+i+' vao danh sach'));
+            }
+            showSP();
+        }
+        function editSP() {
+            let aEdit=prompt('Ban muon thay doi ten hang nao?');
+            for (let i=0;i<a.length;i++){
+                if (aEdit==a[i]){
+                    a[i]=prompt(a[i]+' duoc thay doi thanh:');
+                }
+            }
+            showSP();
+        }
+        function delSP() {
+            let del=prompt('Ban muon xoa ten hang nao?');
+            for (let i=0;i<a.length;i++){
+                if (del==a[i]){
+                    a.splice(i,1);
+                }
+            }
+            showSP();
+        }
+    </script>
+</body>
+</html>

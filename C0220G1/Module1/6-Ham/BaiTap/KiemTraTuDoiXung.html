@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>KiemTraTuDoiXung</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="checkSymmetry(prompt('nhap vao chuoi:'))"  value="menu">check symmetry</button>
+    <script>
+        function checkSymmetry(a) {
+            let min = 0;
+            let max = a.length - 1;
+            let symmetry = true;
+            while (min < max && symmetry) {
+                if (a[min] != a[max]) {
+                    symmetry = false;
+                }
+                min++;
+                max--;
+            }
+            if (symmetry) {
+                alert('chuoi "'+a+'" vua nhap la chuoi doi xung')
+            } else {
+                alert('chuoi "'+a+'" vua nhap khong doi xung')
+            }
+        }
+    </script>
+</body>
+</html>

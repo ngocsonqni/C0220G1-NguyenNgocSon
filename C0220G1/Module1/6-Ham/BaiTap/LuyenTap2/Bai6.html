@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai6</title>
+</head>
+<body>
+    <script>
+        let a=prompt('nhap vao 1 so')*1;
+        if (checkNum(a)){
+            alert('so '+a+' la mot so nguyen duong')
+        } else {
+            alert('so '+a+' khong phai la mot so nguyen duong')
+        }
+        function checkNum(num) {
+            check=false;
+            if ( num>0){
+                check=true;
+            }
+            return check;
+
+        }
+    </script>
+</body>
+</html>

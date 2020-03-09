@@ -1,0 +1,23 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai3</title>
+</head>
+<body>
+    <script>
+        let num1 = prompt('nhap vao so thu nhat:') * 1;
+        let num2 = prompt('nhap vao so thu hai:') * 1;
+        alert(show(num1,num2));
+        function show(num1,num2) {
+            let show;
+            if (num1 > num2) {
+                show='so thu nhat lon hon so thu hai'
+            } else {
+                show='tong 2 so '+num1+' va '+num2+' la: '+num1+'+'+num2+'='+(num1+num2)
+            }
+            return show;
+        }
+    </script>
+</body>
+</html>

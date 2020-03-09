@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai5</title>
+</head>
+<body>
+    <script>
+        let num1=prompt('nhap vao so nguyen thu 1');
+        let num2=prompt('nhap vao so nguyen thu 2');
+        let num3=prompt('nhap vao so nguyen thu 3');
+        alert('so nho nhat trong 3 so '+num1+','+num2+','+num3+' la: '+ checkNum(num1,num2,num3));
+        function checkNum(a,b,c) {
+            min=a;
+            if (b<min){
+                min=b;
+            }
+            if (c<min){
+                min=c;
+            }
+            return min;
+        }
+    </script>
+</body>
+</html>

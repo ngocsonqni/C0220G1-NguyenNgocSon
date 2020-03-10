@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XayDungLopHinhTron</title>
+</head>
+<body>
+    <script>
+        let hinhTron= function (r) {
+            this.radius=r;
+            this.getRadius = function() {
+                return r;
+            }
+            this.getArea = function() {
+                return Math.PI * r * r;
+            }
+        }
+        let circle = new hinhTron(2);
+        let radius = circle.getRadius(); // 2
+        // alert(radius);
+        let area = circle.getArea(); // 12.566370614359172
+        // alert(area);
+        alert("radius: " + radius + "; area: " + area);
+    </script>
+</body>
+</html>

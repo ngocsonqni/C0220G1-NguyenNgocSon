@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XayDungLopMoTaTemperature</title>
+</head>
+<body>
+    <script>
+        let Temperature= {
+            getDoC: function (nhietDo) {
+                return nhietDo;
+            },
+            cToF: function (nhietDo) {
+                return 1.8*nhietDo+32;
+            },
+            cToK: function (nhietDo) {
+                return nhietDo+273.15;
+            }
+        };
+        let c=prompt('nhap vao gia tri cua do c:')*1;
+        alert(c+'oC = '+Temperature.cToF(c)+'oF = '+Temperature.cToK(c)+'oK')
+    </script>
+</body>
+</html>

@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>XayDungLopMoTaDienThoai</title>
+</head>
+<body>
+    <input type="text" id="battery" >
+    <script>
+        let mobile=function (status,battery) {
+            this.status=status;
+            this.battery=battery;
+            this.smsDen= Array();
+            this.smsDi= Array();
+            this.power= function (status) {
+                if (status){
+                    status=false;
+                } else { status=true};
+                return status;
+            };
+            this.smsAdd=function () {
+                    let sms=prompt('nhap tin nhan moi');
+                    battery--;
+                    return sms;
+            };
+            this.Charging=function () {
+                let charg=setInterval(function(){
+                    if(battery >= 100){
+                        clearInterval(charg);
+                    }
+                    document.getElementById("battery").value = battery+'%';
+                    battery++;
+                }, 1000);
+            };
+            this.smsInbox= function (inbox) {
+                this.smsDen.push(inbox);
+                battery--;
+            };
+            this.smsSent= function (sent) {
+                this.smsDi.push(sent);
+                battery--;
+            };
+            this.showSmsDen=function () {
+                alert('danh sach tin nhan da nhan'+'\n'+this.smsDen.join('\n'));
+                battery--;
+            };
+            this.showSmsDi=function () {
+                alert('danh sach tin nhan da gui'+'\n'+this.smsDi.join('\n'));
+                battery--;
+            };
+        }
+
+        let nokia=new mobile(true,80);
+        let iphone=new mobile(true,70);
+        let sms=nokia.smsAdd();
+        nokia.smsSent(sms);
+        iphone.smsInbox(sms);
+        iphone.showSmsDen();
+        nokia.Charging();
+    </script>
+</body>
+</html>

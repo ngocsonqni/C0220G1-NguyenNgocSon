@@ -61,6 +61,8 @@
         };
         let chieuDai=100;
         let chieuRong=50;
+        let a= new Rectangle(dai,rong);
+        a.dienTich(a.getChieuDai(),a.getChieuRong());
         document.getElementById('myCanvas').width=chieuDai;
         document.getElementById('myCanvas').height=chieuRong;
         Rectangle.prototype.show(chieuDai,chieuRong);

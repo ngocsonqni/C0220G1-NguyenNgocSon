@@ -4,11 +4,11 @@
     <meta charset="UTF-8">
     <title>PhatTrienGameLaiXe</title>
 </head>
-<body onload="docReady()">
+<body onload="docReady()" style="background: url('images/wallpaper.png')">
     <h4><p id="speed"></p></h4>
     <h4><p id="diem"></p></h4>
     <h4><p id="maxDiem"></p></h4>
-    <img id="car" src="images/car.png" style="position:absolute;left:600px; top:250px;" height="150" width="90"/>
+    <img id="car" src="images/d0.png" style="position:absolute;left:600px; top:250px;" height="90" width="90"/>
     <img id="coin" src="images/coin.png" style="position:absolute;left:auto;top:auto;" height="90" width="90"/>
 
     <script>
@@ -24,91 +24,99 @@
         let speed=1;
         let diem=0;
         let maxDiem=0;
+        let upImage=0;
         document.getElementById('speed').innerText='Level speed: '+speed;
         document.getElementById('diem').innerText='Diem so: '+diem+' $';
         document.getElementById('maxDiem').innerText='Diem cao nhat: '+diem+' $';
         let status;
         let statusRock;
         let statusCoin=false;
-        let rockCount=Math.round(Math.random()*5);
+        let rockCount=5;
         makeRock();
         makeCoin();
         let carGame= {
-            carUp: function (evt) {
+            carUp: function () {
                 statusRock=false;
                 statusCoin=false;
-                car.height=150;
-                car.width=90;
-                car.src = 'images/car.png';
                 run=setInterval(function () {
-                    if (car.style.top==(0+'px')){
+                    car.src = 'images/u'+upImage+'.png';
+                    upImage++;
+                    if (upImage==10) {
+                        upImage = 0;
+                    }
+                    if (parseInt(car.style.top)<=0){
                         checkWall();
                     };
                     for (let i=0;i<90;i++){
                         carCoordinates[i]=parseInt(car.style.top)+''+(parseInt(car.style.left)+i);
                     }
                     checkEnd();
-                    car.style.top = parseInt(car.style.top) - speed + 'px';
-                },0);
+                    car.style.top = parseInt(car.style.top) - speed*2 + 'px';
+                },50);
             },
             carDown: function () {
                 statusRock=false;
                 statusCoin=false;
-                car.height=150;
-                car.width=90;
-                car.src = 'images/carD.png';
                 run=setInterval(function () {
-                    if (car.style.top==(500+'px')){
+                    car.src = 'images/d'+upImage+'.png';
+                    upImage++;
+                    if (upImage==10) {
+                        upImage = 0;
+                    };
+                    if (parseInt(car.style.top)>=560){
                         checkWall();
                     };
                     for (let i=0;i<90;i++){
-                        carCoordinates[i]=(parseInt(car.style.top)+150)+''+(parseInt(car.style.left)+i);
+                        carCoordinates[i]=(parseInt(car.style.top)+90)+''+(parseInt(car.style.left)+i);
                     }
                     checkEnd();
-                    car.style.top = parseInt(car.style.top) + speed + 'px';
-                },0);
+                    car.style.top = parseInt(car.style.top) + speed*2 + 'px';
+                },50);
             },
             carleft: function () {
                 statusRock=false;
                 statusCoin=false;
-
-                car.height=90;
-                car.width=150;
-                car.src = 'images/carL.png';
                 run=setInterval(function () {
-                    if (car.style.left==(0+'px')){
+                    car.src = 'images/l'+upImage+'.png';
+                    upImage++;
+                    if (upImage==10) {
+                        upImage = 0;
+                    };
+                    if (parseInt(car.style.left)<=0){
                         checkWall();
                     };
                     for (let i=0;i<90;i++){
                         carCoordinates[i]=(parseInt(car.style.top)+i)+''+parseInt(car.style.left);
                     }
                     checkEnd();
-                car.style.left = parseInt(car.style.left) - speed + 'px';
-                },0);
+                car.style.left = parseInt(car.style.left) - speed*2 + 'px';
+                },50);
             },
             carRight: function () {
                 statusRock=false;
                 statusCoin=false;
-                car.height=90;
-                car.width=150;
-                car.src = 'images/carR.png';
                 run=setInterval(function () {
-                    if (car.style.left==(1220+'px')){
+                    car.src = 'images/r'+upImage+'.png';
+                    upImage++;
+                    if (upImage==10) {
+                        upImage = 0;
+                    };
+                    if (parseInt(car.style.left)>=1220){
                         checkWall();
                     };
                     for (let i=0;i<90;i++){
-                        carCoordinates[i]=(parseInt(car.style.top)+i)+''+(parseInt(car.style.left)+150);
+                        carCoordinates[i]=(parseInt(car.style.top)+i)+''+(parseInt(car.style.left)+90);
                     }
                     checkEnd();
-                car.style.left = parseInt(car.style.left) + speed + 'px';
-                },0);
+                car.style.left = parseInt(car.style.left) + speed*2 + 'px';
+                },50);
             },
         };
         function makeRock() {
             for (let i=0;i<rockCount;i++) {
                 let left = Math.round(Math.random() * 1220);
                 let top = Math.round(Math.random() * 500);
-                document.write('<img id="rock'+i+'" src="images/box.gif" style="position:absolute;left:' + left + 'px;top:' + top + 'px;" height="90" width="90"/>');
+                document.write('<img id="rock'+i+'" src="images/Box.gif" style="position:absolute;left:' + left + 'px;top:' + top + 'px;" height="90"; width="90"/>');
                 rockCoordinates[i]= new Array();
                 rockTop=parseInt(document.getElementById('rock'+i).style.top);
                 rockLeft=parseInt(document.getElementById('rock'+i).style.left);
@@ -154,6 +162,7 @@
                 }
                 diem=0;
                 document.getElementById('diem').innerText='Diem so: '+diem+' $';
+                makeCoin();
             }
             if (statusCoin){
                 diem+=69;
@@ -175,6 +184,7 @@
             }
             diem=0;
             document.getElementById('diem').innerText='Diem so: '+diem+' $';
+            makeCoin();
         }
         function moveSelection(evt) {
             if (evt.keyCode!=17 && evt.keyCode!=16 && evt.keyCode!=32){status=evt.keyCode}

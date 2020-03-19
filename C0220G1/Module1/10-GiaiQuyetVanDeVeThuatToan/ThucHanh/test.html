@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+    <script>
+        let num=[1,2,3,4,3,2,1];
+        let a=6;
+        function checkNum(a) {
+            for (let i=0;i<num.length;i++){
+                if (num[i]==a){
+                    return i;
+                }
+            }
+        }
+        if (typeof(checkNum(a))=="number"){
+            alert('so '+a+' xuat hien tai vi tri thu '+checkNum(a)+' cua mang')
+        } else {
+            alert('so '+a+' khong xuat hien trong mang')
+        }
+
+    </script>
+</body>
+</html>

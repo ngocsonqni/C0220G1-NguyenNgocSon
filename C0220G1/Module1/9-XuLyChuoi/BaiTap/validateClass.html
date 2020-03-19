@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validateClass</title>
+</head>
+<body>
+<script>
+    let cl=prompt('nhap class');
+    let clFormat = /^(C|A|P)[0-9]{4,}(G|H|I|K|L|M)$/;
+    if (clFormat.test(cl)) {
+        alert('nhap dung cu phap')
+    }else { alert('nhap sai cu phap')}
+</script>
+</body>
+</html>

@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>MoPhongCauChuyenAdamEva</title>
+</head>
+<body>
+    <script>
+        class Apple {
+            constructor (weight){
+                this.weight=weight;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            decrease(){
+                this.weight--;
+                return this.weight;
+            }
+            isEmpty(){
+                if (this.weight==0){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+        }
+
+        class human{
+            constructor(name,gender,weight){
+                this.name=name;
+                this.gender=gender;
+                this.weight=weight;
+            }
+            getName(){
+                return this.name;
+            }
+            getWeight(){
+                return this.weight;
+            }
+            setName(newName){
+                this.name=newName;
+            }
+            setWeight(newWeight){
+                this.weight=newWeight;
+            }
+            isMale(){
+                if (gender=='male'){
+                    return true;
+                } else {
+                    return false;
+                }
+            }
+            setGender(newgender){
+                this.gender=newgender;
+            }
+            eat (){
+                this.weight++;
+                return this.weight;
+            }
+            say(apple){
+                console.log(this.getName()+': omae wa mou shinderou, nani?'+apple);
+            }
+
+        }
+        let adam = new human('Adam','male',65);
+        let eva= new human('Eva','female',50);
+        let apple= new Apple(10);
+        while (!apple.isEmpty()){
+            adam.eat();
+            apple.decrease();
+            adam.say(apple.getWeight());
+            if (!apple.isEmpty()){
+                eva.eat();
+                apple.decrease();
+                eva.say(apple.getWeight());
+            }
+        }
+    </script>
+</body>
+</html>

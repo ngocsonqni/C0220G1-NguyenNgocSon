@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau5</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="displayMainMenu()"  value="menu">Menu Customer</button>
+    <script>
+        let arrNameCustomers= Array();
+        let count=-1;
+        function displayMainMenu() {
+
+            let customerMenu;
+            do {customerMenu = prompt('Menu:'+'\n'+
+                '0. Exit'+'\n'+
+                '1. Add Name Customer ' + '\n' +
+                '2. Display Infomation Customer'+'\n'+
+                '3. Edit Infomation Customer'+'\n'+
+                '4. Delete Customer' + '\n') * 1;
+                switch (customerMenu) {
+                    case 0:
+                        break;
+                    case 1:
+                        addNewCustomer();
+                        break;
+                    case 2:
+                        displayCustomers();
+                        break;
+                    case 3:
+                        editCustomer();
+                        break;
+                    case 4:
+                        deleteCustomer();
+                        break;
+                    default:
+                        alert('Please select the function included in the menu');
+                        break;
+                }
+            } while (customerMenu!=0)
+        }
+        function addNewCustomer(){
+            let cusAdd=prompt('nhap so luong customer ban muon them vao: ');
+            for (let i=0;i<cusAdd;i++){
+                count++;
+                arrNameCustomers[count]=prompt('So luong customer ban muon them vao: '+ cusAdd+'\n'
+                    +'customer add: '+(i+1)+'\n');
+            }
+        }
+        function displayCustomers() {
+            alert('Danh sach custome hien co (duoc sap xep theo thu tu alphabel):'+'\n'
+                +arrNameCustomers.sort().join('\n'));
+        }
+        function editCustomer() {
+            let cusEdit=prompt('Danh sach custome hien co:'+'\n'+
+                arrNameCustomers.sort().join('\n')+'\n'+
+                ' nhap ten customer can chinh sua vao');
+            for (let i=0;i<arrNameCustomers.length;i++){
+                if (arrNameCustomers[i]==cusEdit){
+                    arrNameCustomers[i]=prompt(cusEdit+' duoc sua thanh');break;
+                } else {alert('nhap sai ten customer')}
+            }
+            displayCustomers();
+        }
+        function deleteCustomer() {
+            let cusDel=prompt('Danh sach custome hien co:'+'\n' +
+                arrNameCustomers.join('\n')+'\n' +
+                'nhap customer ban muon xoa vao: ');
+            for (let i=0;i<arrNameCustomers.length;i++){
+                if (arrNameCustomers[i]==cusDel){
+                    arrNameCustomers.splice(i,1);
+                }
+            }
+            displayCustomers();
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>ValidateEmail</title>
+</head>
+<body>
+    <script>
+            let email=prompt('nhap email');
+            let mailformat = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$;/;
+            if (email.match(mailformat)) {
+                alert('nhap dung cu phap')
+            }else { alert('nhap sai cu phap')}
+    </script>
+</body>
+</html>

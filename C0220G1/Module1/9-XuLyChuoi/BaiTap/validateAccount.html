@@ -1,0 +1,16 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>validateAccount</title>
+</head>
+<body>
+    <script>
+        let account=prompt('nhap account');
+        let accountformat = /^[_a-z0-9]{6,}$;/;
+        if (account.match(accountformat)) {
+            alert('nhap dung cu phap')
+        }else { alert('nhap sai cu phap')}
+    </script>
+</body>
+</html>

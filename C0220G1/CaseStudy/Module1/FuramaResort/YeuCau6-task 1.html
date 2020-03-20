@@ -1,0 +1,485 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau6</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="displayMainMenu()"  value="menu">Menu Customer</button>
+
+    <script>
+        let listCustomers=[];
+        class Customer {
+            constructor(name,idCard,birthDay,email,address,typeCustomer,discount,accompanying,rentDay,typeService,typeRoom) {
+            this.name = name;
+            this.idCard = idCard;
+            this.birthDay = birthDay;
+            this.email = email;
+            this.address = address;
+            this.typeCustomer = typeCustomer;
+            this.discount = discount;
+            this.accompanying = accompanying;
+            this.rentDay = rentDay;
+            this.typeService = typeService;
+            this.typeRoom = typeRoom;
+            }
+
+            //getter
+            getName() {
+                return this.name;
+            }
+            getIdCard() {
+                return this.idCard;
+            }
+            getBirthDay() {
+                return this.birthDay;
+            }
+            getEmail() {
+                return this.email;
+            }
+            getAddress() {
+                return this.address;
+            }
+            getTypeCustomer() {
+                return this.typeCustomer;
+            }
+            getDiscount() {
+                return this.discount;
+            }
+            getAccompanying() {
+                return this.accompanying;
+            }
+            getRentDay() {
+                return this.rentDay;
+            }
+            getTypeService() {
+                return this.typeService;
+            }
+            getTypeRoom() {
+                return this.typeRoom;
+            }
+            //setter
+            setName(newName){
+                 this.name=newName;
+            }
+            setIdCard(id){
+                let idCardCheck=/^[0-9]{9}$/;
+                while (!idCardCheck.test(id)){
+                    id=prompt('Nhap sai cu phap cua id card, yeu cau nhap lai!'+'\n'
+                        +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+                        +'Luu y: Chi duoc nhap so tu 0-9');
+                };
+                this.idCard=id;
+                return this.idCard;
+            }
+            setBirthDay(birthDay){
+                let birthDayFormat=/^((0)[1-9]|[1-2][0-9]|(3)[0-1])\/(0)[1-9]|(1)[0-2]\/(\d{4})$/;
+                while (!birthDayFormat.test(birthDay)){
+                    birthDay=prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
+                        +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                        +'Luu y: Chi duoc nhap so tu 0-9');
+                }
+                let check=true;
+                while (check){
+                    let day=birthDay.substr(0,2)*1;
+                    let month=birthDay.substr(3,2)*1;
+                    let year=birthDay.substr(6,4)*1;
+                    let maxDay;
+                    let leap;
+                    if (year % 4 == 0) {
+                        if (year%100==0){
+                            if (year%400==0){
+                                leap=true;
+                            }
+                            leap=false;
+                        }
+                        leap=true;
+                    }
+                    else {leap=false;
+                    }
+                    switch (month) {
+                        case 4:
+                        case 6:
+                        case 9:
+                        case 11:
+                            maxDay = 30;
+                            break;
+                        case 2:
+                            if (leap) {
+                                maxDay=29;
+                            } else {
+                                maxDay=28;
+                            }
+                            break;
+                        default:
+                            maxDay = 31;
+                    }
+                    if (day<1 || day>maxDay || month<0 || month>12 || !birthDayFormat.test(birthDay)){
+                        birthDay=prompt('nhap sai cu phap, yeu cau nhap lai theo cu phap sau!'+'\n'
+                            +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                            +'Luu y: Chi duoc nhap so tu 0-9');
+
+                    }else {
+                        check=false;
+                    }
+                };
+                this.birthDay=birthDay;
+                return this.birthDay;
+            }
+            setEmail(email){
+                let mailFormat =/^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+                while (!mailFormat.test(email)){
+                    email = prompt('nhap sai cu phap, yeu cau nhap lai theo cu phap sau!'+'\n'
+                        +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+                        +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)');
+                }
+                 this.email=email;
+                return this.email;
+            }
+            setAddress(newAddress){
+                 this.address=newAddress;
+            }
+            setTypeCustomer(typeCustomer){
+                let typeCustomerCheck=/^(Diamond|Platinum|Gold|Silver|Member)$/;
+                while (!typeCustomerCheck.test(typeCustomer)){
+                    typeCustomer=prompt('nhap sai cu phap vui long nhap lai!\nDiamond\nPlatinum\nGold\nSilver\nMember');
+                }
+                this.typeCustomer=typeCustomer;
+                return this.typeCustomer;
+            }
+            setDiscount(discount){
+                let discountCheck=/^[1-9][0-9]*$/;
+                while (!discountCheck.test(discount)){
+                    discount=prompt('nhap sai cu phap vui long nhap lai!\nChi du dung so tu 0-9 va nhap toi thieu la 1');
+                }
+                 this.discount=discount;
+                 return this.discount;
+            }
+            setAccompanying(accompanying){
+                let accompanyingCheck=/^[1-9][0-9]*$/;
+                while (!accompanyingCheck.test(accompanying)){
+                    accompanying=prompt('nhap sai cu phap vui long nhap lai!\nChi du dung so tu 0-9 va nhap toi thieu la 1');
+                }
+                 this.accompanying=accompanying;
+                 return this.accompanying;
+            }
+            setRentDay(rent){
+                let rentCheck=/^[1-9][0-9]*$/;
+                while (!rentCheck.test(rent)){
+                    rent=prompt('nhap sai cu phap vui long nhap lai!\nChi du dung so tu 0-9 va nhap toi thieu la 1');
+                }
+                 this.rentDay=rent;
+                return this.rentDay;
+            }
+            setTypeService(typeService){
+                let typeServiceCheck=/^(Villa|House|Room)$/;
+                while (!typeServiceCheck.test(typeService)){
+                    typeService=prompt('nhap sai cu phap vui long nhap lai!\nVilla\nHouse\nRoom');
+                }
+                this.typeService=typeService;
+                return this.typeService;
+            }
+            setTypeRoom(typeRoom){
+                let typeRoomCheck=/^(Vip|Business|Normal)$/;
+                while (!typeRoomCheck.test(typeRoom)){
+                    typeRoom=prompt('nhap sai cu phap vui long nhap lai!\nVip\nBusiness\nNormal');
+                }
+                this.typeRoom=typeRoom;
+                return this.typeRoom;
+            }
+            totalpays(){
+                let cost=(this.typeService=='Villa')?
+                    500:
+                    (this.typeService=='House')?
+                        300:
+                        (this.typeService=='Room')?100:'';
+                return cost*this.rentDay*(1-(this.discount)/100);
+            }
+            //show customer
+            showCustomer(){
+                alert('Thong tin cua khach hang '+this.name+' la:\n'+'1.Name: '+this.name+'\n'+
+                    '2.Id Card: '+this.idCard+'\n'+
+                    '3.Birth Day: '+this.birthDay+'\n'+
+                    '4.Email: '+this.email+'\n'+
+                    '5.Address: '+this.address+'\n'+
+                    '6.Type Customer: '+this.typeCustomer+'\n'+
+                    '7.Discount: '+this.discount+'\n'+
+                    '8.Accompanying: '+this.accompanying+'\n'+
+                    '9.Rent Day: '+this.rentDay+'\n'+
+                    '10.Type Service: '+this.typeService+'\n'+
+                    '11.Type Room: '+this.typeRoom);
+            }
+        }
+        //main menu
+        function displayMainMenu() {
+            let customerMenu;
+            do {
+                customerMenu = prompt('Menu:' + '\n' +
+                    '0. Exit' + '\n' +
+                    '1. Add New Customer ' + '\n' +
+                    '2. Display Infomation Customer' + '\n' +
+                    '3. Edit Infomation Customer' + '\n' +
+                    '4. Display Total Pay of Customer' + '\n'+
+                    '5. Delete Customer') * 1;
+                switch (customerMenu) {
+                    case 0:
+                        break;
+                    case 1:
+                        addNewCustomer();
+                        break;
+                    case 2:
+                        displayCustomers();
+                        break;
+                    case 3:
+                        editCustomer();
+                        break;
+                    case 4:
+                        displayTotalPay();
+                        break;
+                    case 5:
+                        deleteCustomer();
+                        break;
+                    default:
+                        alert('Please select the function included in the menu');
+                        break;
+                }
+            }while (customerMenu!=0)
+        }
+        function addNewCustomer() {
+            let newCustomer= new Customer();
+            newCustomer.setName(prompt("Xin vui long nhap vao ten:",'nguyen ngoc son'));
+            newCustomer.setIdCard(prompt('Nhap ID card theo cu phap sau!'+'\n'
+                +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+                +'Luu y: Chi duoc nhap so tu 0-9','123456789'));
+            newCustomer.setBirthDay(prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
+                +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                +'Luu y: Chi duoc nhap so tu 0-9','07/06/1994'));
+            newCustomer.setEmail(prompt('Nhap email theo cu phap sau!'+'\n'
+                +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+                +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)','ngocson@gmail.com'));
+            newCustomer.setAddress(prompt('Xin vui long nhap vao dia chi:','di lang-son ha-quang ngai'));
+            newCustomer.setTypeCustomer(prompt('Xin vui long nhap vao loai customer:\nDiamond\nPlatinum\nGold\nSilver\nMember','Diamond'));
+            newCustomer.setDiscount(prompt('Xin vui long nhap vao giam gia:','5'));
+            newCustomer.setAccompanying(prompt('Xin vui long nhap vao so luong di kem:','2'));
+            newCustomer.setRentDay(prompt('Xin vui long nhap vao so ngay thue:','4'));
+            newCustomer.setTypeService(prompt('Xin vui long nhap vao loai dich vu:\nVilla\nHouse\nRoom','Villa'));
+            newCustomer.setTypeRoom(prompt('Xin vui long nhap vao loai phong thue:\nVip\nBusiness\nNormal','Vip'));
+            listCustomers.push(newCustomer);
+        }
+        function displayCustomers() {
+            let count = 0;
+            let nameIndex = [];
+            let name = prompt('nhap ten khach hang muon hien thi');
+            for (let i = 0; i < listCustomers.length; i++) {
+                if (listCustomers[i].getName() == name) {
+                    nameIndex.push(i);
+                    count++;
+                }
+            }
+            display = count;
+            if (count == 0) {
+                alert('khong co khach hang nay trong danh sach')
+            } else {
+                while (display !== 0) {
+                    if (count===1){
+                        display = prompt('1: hien thi thong tin khach hang\n0: Exit') * 1;
+                    }else {
+                        display = prompt('co ' + count + ' khach hang co ten la ' + name + '\n' + 'Ban muon hien thi thong tin cua khach hang nao?\n' +
+                            '1-' + count + ': hien thi thong tin khach hang' + '\n' +
+                            '0: Exit') * 1;
+                    }
+                    if (display!==0){
+                        listCustomers[nameIndex[display-1]].showCustomer();
+                    }
+                }
+            }
+        }
+        function editCustomer() {
+            let count=0;
+            let nameIndex=[];
+            let name=prompt('nhap ten khach hang muon thay doi thong tin');
+            for (let i=0;i<listCustomers.length;i++){
+                if (listCustomers[i].getName()==name){
+                    nameIndex.push(i);
+                    count++;
+                }
+            }
+            let display=count;
+            if (count==0){
+                alert('khong co khach hang nay trong danh sach')
+            }else
+                {
+                while (display!==0) {
+                    if (count === 1) {
+                        display = prompt('1: Thay doi thong tin khach hang\n0: Exit') * 1;
+                    } else {
+                        display = prompt('co ' + count + ' khach hang co ten la ' + name + '\n' + 'Ban muon thay doi thong tin cua khach hang nao?\n' +
+                            '1-' + count + ': chon khach hang can thay doi thong tin' + '\n' +
+                            '0: Exit') * 1;
+                    }
+
+                    if (display !== 0) {
+                        let customerEdit;
+                        let nameEdit=listCustomers[nameIndex[display-1]];
+                        customerEdit = prompt('Chon thong tin khach hang muon thay doi\n(nhap so trong khoang 0-11)'+'\n'+
+                            '0.Exit' + '\n' +
+                            '1.Name: ' + nameEdit.getName() + '\n' +
+                            '2.Id Card: ' + nameEdit.getIdCard() + '\n' +
+                            '3.Birth Day: ' + nameEdit.getBirthDay() + '\n' +
+                            '4.Email: ' + nameEdit.getEmail() + '\n' +
+                            '5.Address: ' + nameEdit.getAddress() + '\n' +
+                            '6.Type Customer: ' + nameEdit.getTypeCustomer() + '\n' +
+                            '7.Discount: ' + nameEdit.getDiscount() + '\n' +
+                            '8.Accompanying: ' + nameEdit.getAccompanying() + '\n' +
+                            '9.Rent Day: ' + nameEdit.getRentDay() + '\n' +
+                            '10.Type Service: ' + nameEdit.getTypeService() + '\n' +
+                            '11.Type Room: ' + nameEdit.getTypeRoom())*1;
+                        switch (customerEdit) {
+                            case 0:
+                                break;
+                            case 1:
+                                nameEdit.setName(("Xin vui long nhap vao ten:",'nguyen ngoc son'));
+                                break;
+                            case 2:
+                                nameEdit.setIdCard(prompt('Nhap ID card theo cu phap sau!'+'\n'
+                                    +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+                                    +'Luu y: Chi duoc nhap so tu 0-9','123456789'));
+                                break;
+                            case 3:
+                                nameEdit.setBirthDay(prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
+                                    +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                                    +'Luu y: Chi duoc nhap so tu 0-9','07/06/1994'));
+                                break;
+                            case 4:
+                                nameEdit.setEmail(prompt('Nhap email theo cu phap sau!'+'\n'
+                                    +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+                                    +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)','ngocson@gmail.com'));
+                                break;
+                            case 5:
+                                nameEdit.setAddress(prompt('Xin vui long nhap vao dia chi:','di lang-son ha-quang ngai'));
+                                break;
+                            case 6:
+                                nameEdit.setTypeCustomer(pprompt('Xin vui long nhap vao loai customer:\nDiamond\nPlatinum\nGold\nSilver\nMember','Diamond'));
+                                break;
+                            case 7:
+                                nameEdit.setDiscount(prompt('Xin vui long nhap vao giam gia:','5'));
+                                break;
+                            case 8:
+                                nameEdit.setAccompanying(prompt('Xin vui long nhap vao so luong di kem:','2'));
+                                break;
+                            case 9:
+                                nameEdit.setRentDay(prompt('Xin vui long nhap vao so ngay thue:','4'));
+                                break;
+                            case 10:
+                                nameEdit.setTypeService(prompt('Xin vui long nhap vao loai dich vu:\nVilla\nHouse\nRoom','Villa'));
+                                break;
+                            case 11:
+                                nameEdit.setTypeRoom(prompt('Xin vui long nhap vao loai phong thue:\nVip\nBusiness\nNormal','Vip'));
+                                break;
+                            default:
+                                alert('Chon sai, vui long chon lai\nChi nhap tu 0-11');
+                                break;
+                        }
+                    }
+                }
+            }
+        }
+        function displayTotalPay() {
+            let namePay=[];
+            let nameIndex=[];
+            let count=0;
+            for (let i=0;i<listCustomers.length;i++){
+                namePay[i]=listCustomers[i].getName();
+            }
+            let name=prompt('Chon khach hang muon hien thi tong tien can thanh toan\n'+namePay.join('\n'));
+            for (let i=0;i<listCustomers.length;i++){
+                if (listCustomers[i].getName()==name){
+                    nameIndex.push(i);
+                    count++;
+                }
+            }
+            let display=count;
+            if (count==0){
+                alert('khong co khach hang nay trong danh sach')
+            }else {
+                while (display !== 0) {
+                    if (count === 1) {
+                        display = prompt('1: Hien thi tong tien can thanh toan cua khach hang nay\n0: Exit') * 1;
+                    } else {
+                        display = prompt('co ' + count + ' khach hang co ten la ' + name + '\n' + 'Ban muon hien thi tong tien can thanh toan cua khach hang nao?\n' +
+                            '1-' + count + ': chon khach hang can hien thi tong tien' + '\n' +
+                            '0: Exit') * 1;
+                    }
+                    if (display!==0){
+                        listCustomers[nameIndex[display-1]].showCustomer();
+                        alert('Tong tien thanh toan cua khach hang '+name+' la: '+listCustomers[nameIndex[display-1]].totalpays());
+                    }
+                }
+            }
+        }
+        function deleteCustomer() {
+            let nameDel=[];
+            let nameIndex=[];
+            let count=0;
+            for (let i=0;i<listCustomers.length;i++){
+                nameDel[i]=listCustomers[i].getName();
+            }
+            let name=prompt('Chon khach hang muon xoa khoi danh sach\n'+nameDel.join('\n'));
+            for (let i=0;i<listCustomers.length;i++){
+                if (listCustomers[i].getName()==name){
+                    nameIndex.push(i);
+                    count++;
+                }
+            }
+            let display=count;
+            if (count==0){
+                alert('khong co khach hang nay trong danh sach')
+            }else {
+                while (display !== 0) {
+                    if (count === 1) {
+                        display = prompt('1: Lua chon xoa thong tin cua khach hang nay\n0: Exit') * 1;
+                    } else {
+                        display = prompt('co ' + count + ' khach hang co ten la ' + name + '\n' + 'Ban muon xoa thong tin cua khach hang nao?\n' +
+                            '1-' + count + ': chon khach hang can xoa thong tin' + '\n' +
+                            '0: Exit') * 1;
+                    }
+                    if (display!==0){
+                        listCustomers[nameIndex[display-1]].showCustomer();
+                        listCustomers.splice([nameIndex[display-1]],1);
+                        nameDel.splice([nameIndex[display-1]],1);
+                        alert('Khach hang '+name+' da duoc xoa khoi danh sach\n'+nameDel.join('\n'));
+                        if (display===1){
+                            display=0;
+                        }else {
+                            count--;
+                        }
+
+                    }
+                }
+            }
+        }
+    </script>
+</body>
+</html>

@@ -1,0 +1,412 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>YeuCau6-task 2</title>
+    <style>
+        .button {
+            background-color: #4CAF50; /* Green */
+            border: 1px solid green;
+            color: white;
+            padding: 15px 32px;
+            text-align: center;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 16px;
+            cursor: pointer;
+            float: left;
+        }
+
+        .button:not(:last-child) {
+            border-right: none; /* Prevent double borders */
+        }
+
+        .button:hover {
+            background-color: #3e8e41;
+        }
+    </style>
+</head>
+<body>
+<button  class="button" type="button" onclick="displayMainMenu()"  value="menu">Menu Employee</button>
+<script>
+    let listEmployees = [];
+    class Employee {
+        constructor(name, idCard, birthDay, email, address, education, position, salary) {
+            this.nameEmployee = name;
+            this.idCardEmployee = idCard;
+            this.birthDayEmployee = birthDay;
+            this.emailEmployee = email;
+            this.addressEmployee = address;
+            this.educationEmployee = education;
+            this.positionEmployee = position;
+            this.salaryEmployee = salary;
+        }
+
+        getNameEmployee() {
+            return this.nameEmployee
+        };
+
+        getIdCardEmployee() {
+            return this.idCardEmployee
+        };
+
+        getBirthDayEmployee() {
+            return this.birthDayEmployee
+        };
+
+        getEmailEmployee() {
+            return this.emailEmployee
+        };
+
+        getAddressEmployee() {
+            return this.addressEmployee
+        };
+
+        getEducationEmployee() {
+            return this.educationEmployee
+        };
+
+        getPositionEmployee() {
+            return this.positionEmployee
+        };
+
+        getSalaryEmployee() {
+            if (this.positionEmployee === "Manager") {
+                return parseInt(this.salaryEmployee) + 500;
+            } else if (this.positionEmployee === "Sale") {
+                return parseInt(this.salaryEmployee) + 300;
+            } else if (this.positionEmployee === "Marketing") {
+                return parseInt(this.salaryEmployee) + 200;
+            } else
+                return this.salaryEmployee;
+        };
+
+        setNameEmployee(name) {
+            this.nameEmployee = name;
+        };
+
+        setIdCardEmployee(id) {
+            let idCardCheck = /^[0-9]{9}$/;
+            while (!idCardCheck.test(id)) {
+                id = prompt('Nhap sai cu phap cua id card, yeu cau nhap lai!' + '\n'
+                    + 'Nhap theo cu phap: xxxxxxxx (8 ki tu)' + '\n'
+                    + 'Luu y: Chi duoc nhap so tu 0-9');
+            }
+            ;
+            this.idCardEmployee = id;
+            return this.idCardEmployee;
+        };
+
+        setBirthDayEmployee(birthDay) {
+            let birthDayFormat = /^((0)[1-9]|[1-2][0-9]|(3)[0-1])\/(0)[1-9]|(1)[0-2]\/(\d{4})$/;
+            while (!birthDayFormat.test(birthDay)) {
+                birthDay = prompt('Nhap ngay sinh theo cu phap sau!' + '\n'
+                    + 'Nhap theo cu phap: DD/MM/YYYY' + '\n'
+                    + 'Luu y: Chi duoc nhap so tu 0-9');
+            }
+            let check = true;
+            while (check) {
+                let day = birthDay.substr(0, 2) * 1;
+                let month = birthDay.substr(3, 2) * 1;
+                let year = birthDay.substr(6, 4) * 1;
+                let maxDay;
+                let leap;
+                if (year % 4 == 0) {
+                    if (year % 100 == 0) {
+                        if (year % 400 == 0) {
+                            leap = true;
+                        }
+                        leap = false;
+                    }
+                    leap = true;
+                } else {
+                    leap = false;
+                }
+                switch (month) {
+                    case 4:
+                    case 6:
+                    case 9:
+                    case 11:
+                        maxDay = 30;
+                        break;
+                    case 2:
+                        if (leap) {
+                            maxDay = 29;
+                        } else {
+                            maxDay = 28;
+                        }
+                        break;
+                    default:
+                        maxDay = 31;
+                }
+                if (day < 1 || day > maxDay || month < 0 || month > 12 || !birthDayFormat.test(birthDay)) {
+                    birthDay = prompt('nhap sai cu phap, yeu cau nhap lai theo cu phap sau!' + '\n'
+                        + 'Nhap theo cu phap: DD/MM/YYYY' + '\n'
+                        + 'Luu y: Chi duoc nhap so tu 0-9');
+                } else {
+                    check = false;
+                }
+            }
+            ;
+            this.birthDayEmployee = birthDay;
+            return this.birthDayEmployee;
+        };
+
+        setEmailEmployee(email) {
+            let mailFormat = /^[A-Za-z0-9]+[A-Za-z0-9]*@[A-Za-z0-9]+(\.[A-Za-z0-9]+)$/;
+            while (!mailFormat.test(email)) {
+                email = prompt('nhap sai cu phap, yeu cau nhap lai theo cu phap sau!' + '\n'
+                    + 'Nhap theo cu phap: xxx@xxx.xxx' + '\n'
+                    + 'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)');
+            }
+            this.emailEmployee = email;
+            return this.emailEmployee;
+        };
+
+        setAddressEmployee(address) {
+            this.addressEmployee = address;
+        };
+
+        setEducationEmployee(education) {
+            let typeEducationCheck = /^(Technical|Colleges|University|Postgraduate)$/;
+            while (!typeEducationCheck.test(education)) {
+                education = prompt('nhap sai cu phap vui long nhap lai!\nTechnical\nColleges\nUniversity\nPostgraduate');
+            }
+            this.educationEmployee = education;
+            return this.educationEmployee;
+        };
+
+        setPositionEmployee(position) {
+            let typePositionCheck = /^(Receptionist|Housekeeper|Sale|Marketing|Manager)$/;
+            while (!typePositionCheck.test(position)) {
+                position = prompt('nhap sai cu phap vui long nhap lai!\nReceptionist\nHousekeeper\nSale\nMarketing\nManager');
+            }
+            this.positionEmployee = position;
+            return this.positionEmployee;
+        };
+
+        setSalaryEmployee(subsidize) {
+            let salaryCheck = /^[1-9][0-9]*$/;
+            while (!salaryCheck.test(subsidize)) {
+                subsidize = prompt('nhap sai cu phap vui long nhap lai!\nChi du dung so tu 0-9 va nhap toi thieu la 1');
+            }
+            this.salaryEmployee = subsidize;
+            return this.salaryEmployee;
+        };
+        showEmployee(){
+            alert('Thong tin cua nhan vien '+this.nameEmployee+' la:\n'+'1.Name: '+this.nameEmployee+'\n'+
+                '2.Id Card: '+this.idCardEmployee+'\n'+
+                '3.Birth Day: '+this.birthDayEmployee+'\n'+
+                '4.Email: '+this.emailEmployee+'\n'+
+                '5.Address: '+this.addressEmployee+'\n'+
+                '6.Education: '+this.educationEmployee+'\n'+
+                '7.Position: '+this.positionEmployee+'\n'+
+                '8.Salary: '+this.getSalaryEmployee());
+        }
+    }
+    function displayMainMenu() {
+        let EmployeeMenu;
+        do {
+            EmployeeMenu = prompt('Menu:' + '\n' +
+                '0. Exit' + '\n' +
+                '1. Add New Employee ' + '\n' +
+                '2. Display Infomation Employee' + '\n' +
+                '3. Edit Infomation Employee' + '\n' +
+                '4. Delete Employee') * 1;
+            switch (EmployeeMenu) {
+                case 0:
+                    break;
+                case 1:
+                    addNewEmployee();
+                    break;
+                case 2:
+                    displayInformationEmployee();
+                    break;
+                case 3:
+                    editInformationEmployee();
+                    break;
+                case 4:
+                    deleteInformationEmployee();
+                    break;
+                default:
+                    alert('Please select the function included in the menu');
+                    break;
+            }
+        }while (EmployeeMenu!=0)
+    }
+    function addNewEmployee() {
+        let newEmployee= new Employee();
+        newEmployee.setNameEmployee(prompt("Xin vui long nhap vao ten:",'nguyen ngoc son'));
+        newEmployee.setIdCardEmployee(prompt('Nhap ID card theo cu phap sau!'+'\n'
+            +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+            +'Luu y: Chi duoc nhap so tu 0-9','123456789'));
+        newEmployee.setBirthDayEmployee(prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
+            +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+            +'Luu y: Chi duoc nhap so tu 0-9','07/06/1994'));
+        newEmployee.setEmailEmployee(prompt('Nhap email theo cu phap sau!'+'\n'
+            +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+            +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)','ngocson@gmail.com'));
+        newEmployee.setAddressEmployee(prompt('Xin vui long nhap vao dia chi:','di lang-son ha-quang ngai'));
+        newEmployee.setEducationEmployee(prompt('Xin vui long nhap vao loại hoc van:\nTechnical\nColleges\nUniversity\nPostgraduate','Technical'));
+        newEmployee.setPositionEmployee(prompt('Xin vui long nhap vao chuc vu:\nReceptionist\nHousekeeper\nSale\nMarketing\nManager','Manager'));
+        newEmployee.setSalaryEmployee(prompt('vui long nhap vao muc luong','1500'));
+        listEmployees.push(newEmployee);
+    }
+    function displayInformationEmployee() {
+        let nameShow=[];
+        let count = 0;
+        let nameIndex = [];
+        for (let i=0;i<listEmployees.length;i++){
+            nameShow[i]=listEmployees[i].getNameEmployee();
+        }
+        let name=prompt('nhap ten nhan vien muon hien thi\n'+nameShow.join('\n'));
+        for (let i = 0; i < listEmployees.length; i++) {
+            if (listEmployees[i].getNameEmployee() == name) {
+                nameIndex.push(i);
+                count++;
+            }
+        }
+        display = count;
+        if (count == 0) {
+            alert('khong co nhan vien nay trong danh sach')
+        } else {
+            while (display !== 0) {
+                if (count===1){
+                    display = prompt('1: hien thi thong tin nhan vien\n0: Exit') * 1;
+                }else {
+                    display = prompt('co ' + count + ' nhan vien co ten la ' + name + '\n' + 'Ban muon hien thi thong tin cua nhan nao?\n' +
+                        '1-' + count + ': hien thi thong tin nhan vien' + '\n' +
+                        '0: Exit') * 1;
+                }
+                if (display!==0){
+                    listEmployees[nameIndex[display-1]].showEmployee();
+                }
+            }
+        }
+    }
+    function editInformationEmployee() {
+        let nameEdit=[];
+        let count=0;
+        let nameIndex=[];
+        for (let i=0;i<listEmployees.length;i++){
+            nameEdit[i]=listEmployees[i].getNameEmployee();
+        }
+        let name=prompt('nhap ten nhan vien muon thay doi thong tin\n'+nameEdit.join('\n'));
+        for (let i=0;i<listEmployees.length;i++){
+            if (listEmployees[i].getNameEmployee()==name){
+                nameIndex.push(i);
+                count++;
+            }
+        }
+        let display=count;
+        if (count===0){
+            alert('khong co nhan vien nay trong danh sach')
+        }else
+        {
+            while (display!==0) {
+                if (count === 1) {
+                    display = prompt('1: Thay doi thong tin nhan vien\n0: Exit') * 1;
+                } else {
+                    display = prompt('co ' + count + ' nhan vien co ten la ' + name + '\n' + 'Ban muon thay doi thong tin cua nhan vien nao?\n' +
+                        '1-' + count + ': chon nhan vien can thay doi thong tin' + '\n' +
+                        '0: Exit') * 1;
+                }
+
+                if (display !== 0) {
+                    let employeeEdit;
+                    let nameEdit=listEmployees[nameIndex[display-1]];
+                    employeeEdit = prompt('Chon thong tin nhan vien muon thay doi\n(nhap so trong khoang 0-8)'+'\n'+
+                        '0.Exit' + '\n' +
+                        '1.Name: '+nameEdit.getNameEmployee()+'\n'+
+                        '2.Id Card: '+nameEdit.getIdCardEmployee()+'\n'+
+                        '3.Birth Day: '+nameEdit.getBirthDayEmployee()+'\n'+
+                        '4.Email: '+nameEdit.getEmailEmployee()+'\n'+
+                        '5.Address: '+nameEdit.getAddressEmployee()+'\n'+
+                        '6.Education: '+nameEdit.getEducationEmployee()+'\n'+
+                        '7.Position: '+nameEdit.getPositionEmployee()+'\n'+
+                        '8.Salary: '+nameEdit.getSalaryEmployee())*1;
+                    switch (employeeEdit) {
+                        case 0:
+                            break;
+                        case 1:
+                            nameEdit.setNameEmployee(prompt("Xin vui long nhap vao ten:",'nguyen ngoc son'));
+                            break;
+                        case 2:
+                            nameEdit.setIdCardEmployee(prompt('Nhap ID card theo cu phap sau!'+'\n'
+                                +'Nhap theo cu phap: xxxxxxxx (8 ki tu)'+'\n'
+                                +'Luu y: Chi duoc nhap so tu 0-9','123456789'));
+                            break;
+                        case 3:
+                            nameEdit.setBirthDayEmployee(prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
+                                +'Nhap theo cu phap: DD/MM/YYYY'+'\n'
+                                +'Luu y: Chi duoc nhap so tu 0-9','07/06/1994'));
+                            break;
+                        case 4:
+                            nameEdit.setEmailEmployee(prompt('Nhap email theo cu phap sau!'+'\n'
+                                +'Nhap theo cu phap: xxx@xxx.xxx'+'\n'
+                                +'Luu y: Chi duoc nhap so (0-9) va chu cai(a-z,A-Z)','ngocson@gmail.com'));
+                            break;
+                        case 5:
+                            nameEdit.setAddressEmployee(prompt('Xin vui long nhap vao dia chi:','di lang-son ha-quang ngai'));
+                            break;
+                        case 6:
+                            nameEdit.setEducationEmployee(prompt('Xin vui long nhap vao loại hoc van:\nTechnical\nColleges\nUniversity\nPostgraduate','Technical'));
+                            break;
+                        case 7:
+                            nameEdit.setPositionEmployee(prompt('Xin vui long nhap vao chuc vu:\nReceptionist\nHousekeeper\nSale\nMarketing\nManager','Manager'));
+                            break;
+                        case 8:
+                            nameEdit.setSalaryEmployee(prompt('vui long nhap vao muc luong','1500'));
+                            break;
+
+                        default:
+                            alert('Chon sai, vui long chon lai\nChi nhap tu 0-8');
+                            break;
+                    }
+                }
+            }
+        }
+    }
+    function deleteInformationEmployee() {
+        let nameDel=[];
+        let nameIndex=[];
+        let count=0;
+        for (let i=0;i<listEmployees.length;i++){
+            nameDel[i]=listEmployees[i].getNameEmployee();
+        }
+        let name=prompt('Chon khach hang muon xoa khoi danh sach\n'+nameDel.join('\n'));
+        for (let i=0;i<listEmployees.length;i++){
+            if (listEmployees[i].getNameEmployee()==name){
+                nameIndex.push(i);
+                count++;
+            }
+        }
+        let display=count;
+        if (count==0){
+            alert('khong co khach hang nay trong danh sach')
+        }else {
+            while (display !== 0) {
+                if (count === 1) {
+                    display = prompt('1: Lua chon xoa thong tin cua khach hang nay\n0: Exit') * 1;
+                } else {
+                    display = prompt('co ' + count + ' khach hang co ten la ' + name + '\n' + 'Ban muon xoa thong tin cua khach hang nao?\n' +
+                        '1-' + count + ': chon khach hang can xoa thong tin' + '\n' +
+                        '0: Exit') * 1;
+                }
+                if (display!==0){
+                    listEmployees[nameIndex[display-1]].showEmployee();
+                    listEmployees.splice([nameIndex[display-1]],1);
+                    nameDel.splice([nameIndex[display-1]],1);
+                    alert('Khach hang '+name+' da duoc xoa khoi danh sach\n'+nameDel.join('\n'));
+                    if (display===1){
+                        display=0;
+                    }else {
+                        count--;
+                    }
+                }
+            }
+        }
+    }
+</script>
+</body>
+</html>

@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+<script>
+    while (true) {
+        let nhap = prompt("nhap 1 so dien thoai");
+        validateNumberPhone = /^((\+84)|(84)|[0])(86|96|97|98|32|33|34|35|36|37|38|39)\d{7}$/;
+        if (validateNumberPhone.test(nhap)) {
+            alert("dau so dien thoai Viettel");
+        } else {
+            alert("khong phai dau so dien thoai Viettel")
+        }
+    }
+</script>
+
+</body>
+</html>

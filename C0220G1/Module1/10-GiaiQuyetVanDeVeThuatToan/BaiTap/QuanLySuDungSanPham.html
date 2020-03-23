@@ -1,0 +1,154 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>QuanLySuDungSanPham</title>
+    <style>
+        .container {
+            border-radius: 5px;
+            background-color: #f2f2f2;
+            padding: 20px;
+            width: 30%;
+        }
+
+        input[type=text] {
+            width: 80%;
+            padding: 12px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+            box-sizing: border-box;
+            margin-top: 6px;
+            margin-bottom: 16px;
+            resize: vertical;
+        }
+
+
+        input[type='submit'], button, [aria-label]{
+            cursor: pointer;
+            background-color: #4CAF50;
+            color: white;
+            padding: 12px 20px;
+            border: none;
+            border-radius: 4px;
+        }
+
+        input[type=submit]:hover {
+            background-color: #45a049;
+        }
+
+        #spoiler{
+            display: none;
+        }
+
+        table {
+            border-collapse: collapse;
+            width: 50%;
+        }
+
+        th{
+            text-align: center;
+            padding: 8px;
+            font-weight: bold;
+        }
+        td {
+            text-align: left;
+            padding: 8px;
+        }
+
+        tr:nth-child(even){background-color: #f2f2f2}
+
+    </style>
+</head>
+<body>
+<h3>Add New Product</h3>
+<div class="container">
+    <form action="javascript:void(0);" method="POST" onsubmit="Management .add()">
+        <input type="text" id="add-name" placeholder="New Product">
+        <input type="submit" value="Add">
+    </form>
+</div>
+
+<h3>Display All Product</h3>
+<table>
+    <tr>
+        <th style = "text-align: left;">Product Name</th>
+        <th style = "text-align: right; color:brown" colspan="2"><p id="showDemSanPham"></p></th>
+    </tr>
+    <tbody id="showSanPham">
+    </tbody>
+</table>
+<div id="spoiler" role="aria-hidden">
+    <h3>Edit Product</h3>
+    <div class="container">
+        <form action="javascript:void(0);" method="POST" id="saveEdit">
+            <input type="text" id="edit-name">
+            <input type="submit" value="Edit" /> <a onclick="closeInput()" aria-label="Close">&#10006;</a>
+        </form>
+    </div>
+</div>
+</p>
+<script>
+    class Management {
+        constructor(demSanPham,sanPham) {
+            this.demSanPham = showSanPham;
+            this.sanPham=sanPham;
+        }
+        showDemSanPham(dsp) {
+            if (dsp) {
+                document.getElementById('showDemSanPham').innerHTML = dsp + ' san pham';
+            } else {
+                document.getElementById('showDemSanPham').innerHTML = 'khong co san pham';
+            }
+        }
+        hienThiSanPham(){
+            let data = '';
+            if (this.sanPham.length > 0) {
+                for (let i = 0; i < this.sanPham.length; i++) {
+                    data += '<tr>';
+                    data += '<td>' + this.sanPham[i] + '</td>';
+                    data += '<td><button onclick="danhSachSanPham.edit(' + i + ')">Edit</button></td>';
+                    data += '<td><button onclick="danhSachSanPham.delete(' + i + ')">Delete</button></td>';
+                    data += '</tr>';
+                }
+            }
+            this.showDemSanPham(this.sanPham.length);
+            return document.getElementById('showSanPham').innerHTML = data;
+        }
+        add() {
+            let el = document.getElementById('add-name');
+            let product = el.value;
+            if (product) {
+                this.sanPham.push(product.trim());
+                el.value = '';
+                this.hienThiSanPham();
+            }
+        };
+
+        edit(item) {
+            let el = document.getElementById('edit-name');
+            el.value = this.sanPham[item];
+            document.getElementById('spoiler').style.display = 'block';
+            self = this;
+            document.getElementById('saveEdit').onsubmit = function() {
+                let product = el.value;
+                if (product) {
+                    self.sanPham.splice(item, 1, product.trim());
+                    self.hienThiSanPham();
+                    document.getElementById('spoiler').style.display = 'none';
+                }
+            }
+        };
+
+        delete(item) {
+            this.sanPham.splice(item, 1);
+            this.hienThiSanPham();
+        };
+    }
+    let sp=['Sony Xperia', 'Samsung Galaxy', 'Nokia 6', 'Xiaomi Redmi Note 4', 'Apple iPhone 6S', 'Xiaomi Mi 5s Plus',
+        'Apple iPhone 8 Plus', 'Fujitsu F-04E', 'Oppo A71'];
+    let dsp=sp.length;
+    let danhSachSanPham= new Management(dsp,sp);
+    danhSachSanPham.hienThiSanPham();
+</script>
+</body>
+</html>

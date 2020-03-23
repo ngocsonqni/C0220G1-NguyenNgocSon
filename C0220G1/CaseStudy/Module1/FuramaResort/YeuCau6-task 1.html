@@ -95,7 +95,7 @@
                 return this.idCard;
             }
             setBirthDay(birthDay){
-                let birthDayFormat=/^((0)[1-9]|[1-2][0-9]|(3)[0-1])\/(0)[1-9]|(1)[0-2]\/(\d{4})$/;
+                let birthDayFormat=/^(0[1-9]|[1-2][0-9]|(3)[0-1])\/(0)[1-9]|(1)[0-2]\/(\d{4})$/;
                 while (!birthDayFormat.test(birthDay)){
                     birthDay=prompt('Nhap ngay sinh theo cu phap sau!'+'\n'
                         +'Nhap theo cu phap: DD/MM/YYYY'+'\n'

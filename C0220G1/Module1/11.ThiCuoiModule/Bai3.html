@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai 3</title>
+</head>
+<body>
+    <script>
+        let score=[10,5,2,8,-1,6,8];
+        let max=score[0];
+        let index=0;
+        findMaxScore(score);
+        alert('Mang :'+score+'\n'+
+              'Max: '+max+'\n'+
+              'Index: '+index);
+        function findMaxScore(arr) {
+            for (let i=1;i<arr.length;i++){
+                if (max<=arr[i]){
+                    max=arr[i];
+                    index=i;
+                }
+            }
+        }
+    </script>
+</body>
+</html>

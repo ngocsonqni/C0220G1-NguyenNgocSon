@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Bai4</title>
+</head>
+<body>
+    <script>
+        class HocSinh {
+            constructor(stt,hoTen,ngaySinh,diemTrungBinh) {
+                this.stt=stt;
+                this.hoTen=hoTen;
+                this.ngaySinh=ngaySinh;
+                this.diemTrungBinh=diemTrungBinh;
+            }
+            showInfor(){
+                document.writeln('thong tin cua hoc sinh:<br>'+
+                      'Stt: '+this.stt+'<br>'+
+                      'Ho va Ten: '+this.hoTen+'<br>'+
+                      'Ngay sinh: '+this.ngaySinh+'<br>'+
+                      'Diem trung binh: '+this.diemTrungBinh+'<br>')
+            }
+            kiemTraHocLuc(){
+                if(this.diemTrungBinh>8){
+                    document.writeln(this.hoTen+' la hoc sinh gioi');
+                }else if (this.diemTrungBinh>=6.5){
+                    document.writeln(this.hoTen+' la hoc sinh kha');
+                }else if (this.diemTrungBinh>=5){
+                    document.writeln(this.hoTen+' la hoc sinh trung binh');
+                }else if (this.diemTrungBinh>=3.5){
+                    document.writeln(this.hoTen+' la hoc sinh yeu');
+                }else {
+                    document.writeln(this.hoTen+' la hoc sinh kem');
+                }
+            }
+        }
+        let hocSinh1= new HocSinh(7,'Le Manh An','07/06/1994',8.3);
+        hocSinh1.showInfor();
+        hocSinh1.kiemTraHocLuc();
+    </script>
+</body>
+</html>

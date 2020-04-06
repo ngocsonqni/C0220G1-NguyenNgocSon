@@ -7,4 +7,5 @@ public class HienThiThoiGianHeThong {
         Date now = new Date();
         System.out.println("Now is: " + now);
     }
+
 }

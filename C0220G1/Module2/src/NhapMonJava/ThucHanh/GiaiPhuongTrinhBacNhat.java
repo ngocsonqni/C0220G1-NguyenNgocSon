@@ -1,4 +1,5 @@
-package ThucHanh;
+package NhapMonJava.ThucHanh;
+
 
 import java.util.Scanner;
 

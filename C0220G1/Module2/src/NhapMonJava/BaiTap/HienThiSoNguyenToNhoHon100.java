@@ -1,4 +1,4 @@
-package BaiTap;
+package NhapMonJava.BaiTap;
 
 public class HienThiSoNguyenToNhoHon100 {
     public static void main(String[] args) {

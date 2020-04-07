@@ -1,4 +1,4 @@
-package ThucHanh;
+package NhapMonJava.ThucHanh;
 import java.util.Date;
 
 public class HienThiThoiGianHeThong {

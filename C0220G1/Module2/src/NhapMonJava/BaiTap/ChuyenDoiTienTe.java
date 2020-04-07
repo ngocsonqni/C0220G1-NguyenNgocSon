@@ -1,4 +1,4 @@
-package BaiTap;
+package NhapMonJava.BaiTap;
 
 import java.util.Scanner;
 

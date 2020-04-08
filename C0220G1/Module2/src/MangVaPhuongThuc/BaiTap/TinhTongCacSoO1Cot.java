@@ -2,7 +2,7 @@ package MangVaPhuongThuc.BaiTap;
 
 import java.util.Scanner;
 
-public class TongSoODuongCheoChinhMang2Chieu {
+public class TinhTongCacSoO1Cot {
     public static void main(String[] args) {
         int sizeX,sizeY;
         double[][] array;
@@ -12,6 +12,7 @@ public class TongSoODuongCheoChinhMang2Chieu {
         sizeX = scanner.nextInt();
         System.out.print("Enter a size y:");
         sizeY = scanner.nextInt();
+
         array = new double[sizeX][sizeY];
         for (int i=0;i<sizeX;i++){
             for (int j=0;j<sizeY;j++){
@@ -19,12 +20,10 @@ public class TongSoODuongCheoChinhMang2Chieu {
                 array[i][j] = scanner.nextInt();
             }
         }
+        System.out.println("vi tri cot muon tinh tong");
+        int cot=scanner.nextInt()-1;
         for (int i=0;i<sizeX;i++){
-            for (int j=0;j<sizeY;j++){
-                if (i==j || j==(sizeY-1-i)){
-                    sum+=array[i][j];
-                }
-            }
+            sum+=array[i][cot];
         }
         for (int i=0;i<sizeX;i++){
             for (int j=0;j<sizeY;j++){
@@ -32,6 +31,6 @@ public class TongSoODuongCheoChinhMang2Chieu {
             }
             System.out.println();
         }
-        System.out.println("Tong cac so o duong cheo chinh la "+sum);
+        System.out.println("Tong cac so o cot thu "+(cot+1)+" la "+sum);
     }
 }

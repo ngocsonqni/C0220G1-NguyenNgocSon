@@ -1,8 +1,6 @@
-package MangVaPhuongThuc.ThucHanh;
+package MangVaPhuongThuc.BaiTap;
 
-import java.util.Scanner;
-
-public class TimGiaTriNhoNhat {
+public class TimGiaTriNhoNhatTrongMang {
     public static int minValue(int []array){
 
         int min = array[0];
@@ -18,15 +16,7 @@ public class TimGiaTriNhoNhat {
         return index;
     }
     public static void main(String[] args) {
-        Scanner scanner=new Scanner(System.in);
-        int size;
-        System.out.print("Enter a size x:");
-        size = scanner.nextInt();
-        int[] arr=new int[size];
-        for (int i=0;i < arr.length;i++) {
-            System.out.print("Enter element " + (i + 1) + ": ");
-            arr[i] = scanner.nextInt();
-        }
+        int []arr = {4, 12, 7, 8, 1, 6, 9};
         int index = minValue(arr);
         System.out.println("The smallest element in the array is: " + arr[index]);
     }

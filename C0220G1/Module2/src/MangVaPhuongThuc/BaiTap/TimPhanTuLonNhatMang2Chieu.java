@@ -13,7 +13,6 @@ public class TimPhanTuLonNhatMang2Chieu {
         sizeY = scanner.nextInt();
         array = new int[sizeX][sizeY];
         for (int i=0;i<sizeX;i++){
-
             for (int j=0;j<sizeY;j++){
                 System.out.print("Enter element " + i + "," + j + " : ");
                 array[i][j] = scanner.nextInt();

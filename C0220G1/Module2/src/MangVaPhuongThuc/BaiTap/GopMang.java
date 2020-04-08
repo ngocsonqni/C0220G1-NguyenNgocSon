@@ -48,7 +48,7 @@ public class GopMang {
         for (int j = 0; j < array2.length; j++) {
             System.out.print(array2[j] + "\t");
         }
-        System.out.println(2);
+        System.out.println();
         System.out.print("mang 3: ");
         for (int j = 0; j < array3.length; j++) {
             System.out.print(array3[j] + "\t");

@@ -31,6 +31,7 @@ public class MyList<E> {
         for (int i=index;i<elements.length-1;i++){
             elements[i]=elements[i+1];
         }
+        size--;
         return (E) a;
     }
     public E get(int i) {

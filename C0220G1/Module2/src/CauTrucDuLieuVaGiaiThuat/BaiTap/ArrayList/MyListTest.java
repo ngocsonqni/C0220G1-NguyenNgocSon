@@ -7,8 +7,10 @@ public class MyListTest {
 
         listInteger.add(0);
         listInteger.add(1);
-        System.out.println("element 0: "+listInteger.get(0));
-        System.out.println("element 1: "+listInteger.get(1));
+        listInteger.add(2,1);
+        for (int i=0;i<listInteger.size();i++){
+            System.out.println("element "+i+": "+listInteger.get(i));
+        }
         System.out.println();
         Object[] listInteger2;
         listInteger2=listInteger.clone();

@@ -7,7 +7,7 @@
 <body>
     <script>
         let phoneNumber=prompt('nhap so dien thoai');
-        let phoneNumberFormat = /^\([0-9]{2,}\)-\((0)[0-9]{9,}/;
+        let phoneNumberFormat = /^\([0-9]{2,}\)-\((0)[0-9]{9,}\)/;
         if (phoneNumberFormat.test(phoneNumber)) {
             alert('nhap dung cu phap')
         }else { alert('nhap sai cu phap')}

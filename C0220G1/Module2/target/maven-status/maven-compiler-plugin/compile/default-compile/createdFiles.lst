@@ -1,0 +1,15 @@
+KeThua\BaiTap\Triangle\Shape.class
+KeThua\BaiTap\Triangle\Triangle.class
+KeThua\BaiTap\MoveablePoint\Point.class
+KeThua\BaiTap\MoveablePoint\MoveablePointRun.class
+KeThua\BaiTap\Point2D\Point2D.class
+KeThua\BaiTap\Point2D\Point3D.class
+KeThua\BaiTap\MoveablePoint\MoveablePoint.class
+KeThua\BaiTap\CircleVaCylinder\Run.class
+KeThua\ThucHanh\CacDoiTuongHinhHoc\Shape.class
+KeThua\BaiTap\CircleVaCylinder\Cylinder.class
+KeThua\BaiTap\Point2D\PointRun.class
+KeThua\BaiTap\Triangle\TriangleRun.class
+KeThua\ThucHanh\CacDoiTuongHinhHoc\Circle.class
+KeThua\BaiTap\CircleVaCylinder\Circle.class
+KeThua\ThucHanh\CacDoiTuongHinhHoc\Run.class

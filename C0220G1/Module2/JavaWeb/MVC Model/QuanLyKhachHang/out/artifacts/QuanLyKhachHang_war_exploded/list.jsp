@@ -34,9 +34,11 @@
         </tr>
     </c:forEach>
 </table><br>
+<fieldset style="width: 50%">
+    <legend>Product Search</legend>
 <form action="/products" >
     <label for="tenSanPham">
-        <input type="text" id="tenSanPham" name="tenSanPham">
+        <input type="search" id="tenSanPham" name="tenSanPham">
         <input type="hidden" value="viewName" name="action">
     </label>
     <input type="submit" value="Find">
@@ -70,9 +72,6 @@
             </table>
         </c:otherwise>
     </c:choose>
-
-
-
-
+</fieldset>
 </body>
 </html>

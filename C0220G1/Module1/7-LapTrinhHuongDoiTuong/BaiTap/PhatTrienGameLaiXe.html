@@ -12,6 +12,26 @@
     <img id="coin" src="images/coin.png" style="position:absolute;left:auto;top:auto;" height="90" width="90"/>
 
     <script>
+        function delay10s() {
+            setInterval(function () {
+                run();
+            },10000)
+        }
+        function run() {
+            let done=0;
+            x=setInterval(function () {
+                if (done==10){
+                    clearInterval(x);
+                }
+                quay();
+                done+=1;
+            },200)
+        }
+
+    </script>
+
+
+    <script>
         let car = document.getElementById("car");
         let carCoordinates=[];
         let rockCoordinates=[];

@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Delete service resort </h1>
+
+                <table style="width: 50%">
+                    <form action="#" th:action="@{/serviceResort-delete}" th:object="${serviceResort}"
+                          method="post" novalidate="novalidate">
+                        <input type="hidden" name="idKhachHang" th:field="*{idDichVu}">
+
+                        <tr>
+                            <td>Mã dịch vụ</td>
+                            <td><p th:text="*{maDichVu}"/></td>
+                        </tr>
+
+                        <tr>
+                            <td>Tên dịch vụ</td>
+                            <td><p th:text="*{tenDichVu}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Diện tích</td>
+                            <td><p th:text="*{dienTich}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số tầng</td>
+                            <td><p th:text="*{soTang}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số người tối đa</td>
+                            <td><p th:text="*{soNguoiToiDa}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Chi phí thuê</td>
+                            <td><p th:text="*{chiPhiThue}"/></td>
+                        </tr>
+                        <tr>
+                            <input type="submit" value="Delete product"/>
+                        </tr>
+
+                    </form>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<p>
+    <a href="/">Product list</a>
+</p>
+    <table id="products">
+        <tr>
+            <td th:each="cart : ${cart}">
+                <img th:src="${cart.image}" style="height: 200px;width: 200px">
+            </td>
+        </tr>
+        <tr>
+            <th th:each="cart : ${cart}">
+                <p th:text="${cart.nameProduct}"/>
+                <p th:text="${cart.cost}"/>
+            </th>
+        </tr>
+        <tr>
+            <th th:each="count : ${count}">
+                <p>Số lượng</p>
+                <input type="number" th:value="${count}"/>
+            </th>
+
+        </tr>
+    </table>
+
+
+
+    <table id="products">
+        <tr>
+            <th>
+                <p>Tổng tiền cần thanh toán:</p>
+                <p th:text="${totalPay}"></p>
+            </th>
+        </tr>
+    </table>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

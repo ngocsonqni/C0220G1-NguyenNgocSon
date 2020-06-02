@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<p>
+    <a href="/">Product list</a>
+</p>
+    <table id="products">
+        <tr>
+            <td>
+                <img th:src="${product.image}" style="height: 200px;width: 200px">
+            </td>
+        </tr>
+        <tr>
+            <th>
+                <p th:text="${product.nameProduct}"></p>
+                <p th:text="${product.cost}"/>
+            </th>
+        </tr>
+    </table>
+<form th:action="@{/show-cart}" th:object="${product}"
+      method="post" novalidate="novalidate">
+    <input type="hidden" th:field="${product.id}"/>
+    <center>
+    <input type="submit" value="MUA LUÔN" >
+    </center>
+</form>
+<footer th:replace="layout :: footer"></footer>
+</body>
+</html>

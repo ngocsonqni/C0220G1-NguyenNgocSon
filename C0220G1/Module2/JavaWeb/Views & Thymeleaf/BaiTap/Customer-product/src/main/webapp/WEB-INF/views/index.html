@@ -38,8 +38,7 @@
     </tbody>
 </table><br><br><br>
 <fieldset>
-        <legend>Product Search</legend>
-
+    <legend>Product Search</legend>
     <form action="/product/viewName">
         <input type="text" name="name" th:value="${name}"/>
         <input type="submit" value="Search"/>
@@ -49,32 +48,32 @@
             <span th:text="${searching}"></span>
         </div>
     </div>
-<div th:if="${viewByName}">
-<table id="products">
-    <thead>
-    <tr>
-        <th>Tên sản phẩm</th>
-        <th>Giá sản phẩm</th>
-        <th>Mô tả sản phẩm</th>
-        <th>Nhà sản xuất</th>
-        <th>Edit</th>
-        <th>Delete</th>
-        <th>View</th>
-    </tr>
-    </thead>
-    <tbody>
-    <tr th:each="row,rowStat: ${viewByName}">
-        <td th:utext="${row.tenSanPham}"></td>
-        <td th:text="${row.giaSanPham}"></td>
-        <td th:text="${row.moTaSanPham}"></td>
-        <td th:text="${row.nhaSanXuat}"></td>
-        <td><a th:href="@{/product/edit/{id}(id=${row.id})}">Edit</a></td>
-        <td><a th:href="@{/product/delete(id=${row.id})}">Delete</a></td>
-        <td><a th:href="@{/product/view/{id}(id=${row.id})}">View</a></td>
-    </tr>
-    </tbody>
-</table>
-</div>
+    <div th:if="${viewByName}">
+        <table id="products">
+            <thead>
+                <tr>
+                    <th>Tên sản phẩm</th>
+                    <th>Giá sản phẩm</th>
+                    <th>Mô tả sản phẩm</th>
+                    <th>Nhà sản xuất</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                    <th>View</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr th:each="row,rowStat: ${viewByName}">
+                    <td th:utext="${row.tenSanPham}"></td>
+                    <td th:text="${row.giaSanPham}"></td>
+                    <td th:text="${row.moTaSanPham}"></td>
+                    <td th:text="${row.nhaSanXuat}"></td>
+                    <td><a th:href="@{/product/edit/{id}(id=${row.id})}">Edit</a></td>
+                    <td><a th:href="@{/product/delete(id=${row.id})}">Delete</a></td>
+                    <td><a th:href="@{/product/view/{id}(id=${row.id})}">View</a></td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
 </fieldset>
 <footer th:replace="layout :: footer"></footer>
 </body>

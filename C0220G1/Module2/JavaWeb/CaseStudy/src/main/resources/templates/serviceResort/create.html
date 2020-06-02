@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+
+
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Create service resort </h1>
+                <th:block th:if="${message}">
+                    <p style="color: firebrick" th:text="${message}"></p>
+                </th:block>
+
+            <table style="width: 50%">
+                <form action="#" th:action="@{/serviceResort-create}" th:object="${serviceResort}"
+                      method="post" novalidate="novalidate">
+                    <input type="hidden" th:field="*{idDichVu}">
+
+                    <tr>
+                        <td>Mã dịch vụ</td>
+                        <td><input id="maDichVu" type="text" th:field="*{maDichVu}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('maDichVu')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('maDichVu')}" th:errors="*{maDichVu}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Tên dịch vụ</td>
+                        <td><input id="tenDichVu" type="text" th:field="*{tenDichVu}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('tenDichVu')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('tenDichVu')}" th:errors="*{tenDichVu}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Diện tích</td>
+                        <td><input id="dienTich" type="text" th:field="*{dienTich}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('dienTich')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('dienTich')}" th:errors="*{dienTich}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Số tầng</td>
+                        <td><input id="soTang" type="text" th:field="*{soTang}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('soTang')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('soTang')}" th:errors="*{soTang}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Số người tối đa</td>
+                        <td><input id="soNguoiToiDa" type="text" th:field="*{soNguoiToiDa}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('soNguoiToiDa')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('soNguoiToiDa')}" th:errors="*{soNguoiToiDa}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Chi phí thuê</td>
+                        <td><input id="chiPhiThue" type="text" th:field="*{chiPhiThue}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('chiPhiThue')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('chiPhiThue')}" th:errors="*{chiPhiThue}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <input type="submit" value="Create new service resort"/>
+                    </tr>
+
+                </form>
+            </table>
+            </center>
+        </div>
+    </font>
+
+</div>
+
+
+
+
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

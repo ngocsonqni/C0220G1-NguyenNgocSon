@@ -1,0 +1,109 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+
+
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Create contract </h1>
+                <th:block th:if="${message}">
+                    <p style="color: firebrick" th:text="${message}"></p>
+                </th:block>
+
+            <table style="width: 50%">
+                <form action="#" th:action="@{/contract-create}" th:object="${contract}"
+                      method="post" novalidate="novalidate">
+                    <input type="hidden" th:field="*{idHopDong}">
+
+                    <tr>
+                        <td>Mã hợp đồng</td>
+                        <td><input id="maHopDong" type="text" th:field="*{maHopDong}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('maHopDong')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('maHopDong')}" th:errors="*{maHopDong}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Mã khách hàng</td>
+                        <td>
+                            <select th:field="*{customer.idKhachHang}">
+                                <th:block th:each="customer1 : ${customer}">
+                                    <option th:value="${customer1.idKhachHang}" th:text="${customer1.maKhachHang}"></option>
+                                </th:block>
+                         </select>
+                        </td>
+                    </tr>
+
+                    <tr th:if="${#fields.hasErrors('customer')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('customer')}" th:errors="*{customer}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Mã dịch vụ</td>
+                        <td>
+                            <select th:field="*{serviceResort.idDichVu}">
+                                <th:block th:each="service : ${serviceResort}">
+                                    <option th:value="${service.idDichVu}" th:text="${service.maDichVu}"></option>
+                                </th:block>
+                            </select>
+                        </td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('serviceResort')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('serviceResort')}" th:errors="*{serviceResort}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày làm hợp đồng</td>
+                        <td><input id="ngayLamHopDong" type="text" th:field="*{ngayLamHopDong}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('ngayLamHopDong')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('ngayLamHopDong')}" th:errors="*{ngayLamHopDong}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày kết thúc</td>
+                        <td><input id="ngayKetThuc" type="text" th:field="*{ngayKetThuc}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('ngayKetThuc')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('ngayKetThuc')}" th:errors="*{ngayKetThuc}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Tiền đặt cọc</td>
+                        <td><input id="tienDatCoc" type="text" th:field="*{tienDatCoc}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('tienDatCoc')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('tienDatCoc')}" th:errors="*{tienDatCoc}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Tổng tiền</td>
+                        <td><input id="tongTien" type="text" th:field="*{tongTien}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('tongTien')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('tongTien')}" th:errors="*{tongTien}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <input type="submit" value="Create new contract"/>
+                    </tr>
+
+                </form>
+            </table>
+            </center>
+        </div>
+    </font>
+
+</div>
+
+
+
+
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

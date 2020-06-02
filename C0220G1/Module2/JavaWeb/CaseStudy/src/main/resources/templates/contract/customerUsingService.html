@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Show customer using service list </h1>
+                <table style="width: 100%">
+                    <tr>
+                        <th>Họ và tên</th>
+                        <th>Ngày sinh</th>
+                        <th>Số CMND</th>
+                        <th>Số điện thoại</th>
+                        <th>Email</th>
+                        <th>Địa chỉ</th>
+                        <th>Edit</th>
+                        <th>Delete</th>
+                    </tr>
+
+                    <th:block th:each="customer : ${customerUsingService}">
+                        <tr>
+                            <td th:text="${customer.hoTen}"></td>
+                            <td th:text="${customer.ngaySinh}"></td>
+                            <td th:text="${customer.cmnd}"></td>
+                            <td th:text="${customer.sdt}"></td>
+                            <td th:text="${customer.email}"></td>
+                            <td th:text="${customer.diaChi}"></td>
+                            <td><a th:href="@{/customer-edit/__${customer.idKhachHang}__ }" style="color: #45a049">Edit</a></td>
+                            <td><a th:href="@{/customer-delete/__${customer.idKhachHang}__ }" style="color: #45a049">Delete</a></td>
+                        </tr>
+                    </th:block>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

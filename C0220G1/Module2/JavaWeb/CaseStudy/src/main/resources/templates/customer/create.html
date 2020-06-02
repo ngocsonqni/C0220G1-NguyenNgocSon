@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+
+
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Create Customer </h1>
+                <th:block th:if="${message}">
+                    <p style="color: #006633" th:text="${message}"></p>
+                </th:block>
+
+            <table style="width: 50%">
+                <form action="#" th:action="@{/customer-create}" th:object="${customer}"
+                      method="post" novalidate="novalidate">
+                    <input type="hidden" th:field="*{idKhachHang}">
+
+                    <tr>
+                        <td>Mã khách hàng</td>
+                        <td>
+                            <input id="maKhachHang" type="text" th:field="*{maKhachHang}">
+                        </td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('maKhachHang')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('maKhachHang')}" th:errors="*{maKhachHang}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Họ và tên</td>
+                        <td><input id="hoTen" type="text" th:field="*{hoTen}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('hoTen')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('hoTen')}" th:errors="*{hoTen}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Ngày sinh</td>
+                        <td><input id="ngaySinh" type="text" th:field="*{ngaySinh}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('ngaySinh')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('ngaySinh')}" th:errors="*{ngaySinh}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Số CMND</td>
+                        <td><input id="cmnd" type="text" th:field="*{cmnd}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('cmnd')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('cmnd')}" th:errors="*{cmnd}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Số điện thoại</td>
+                        <td><input id="sdt" type="text" th:field="*{sdt}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('sdt')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('sdt')}" th:errors="*{sdt}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Email</td>
+                        <td><input id="email" type="text" th:field="*{email}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('email')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('email')}" th:errors="*{email}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <td>Địa chỉ</td>
+                        <td><input id="diaChi" type="text" th:field="*{diaChi}"></td>
+                    </tr>
+                    <tr th:if="${#fields.hasErrors('diaChi')}">
+                        <td></td>
+                        <td><p th:if="${#fields.hasErrors('diaChi')}" th:errors="*{diaChi}" class="valid">Name Error</p></td>
+                    </tr>
+                    <tr>
+                        <input type="submit" value="Create new customer"/>
+                    </tr>
+
+                </form>
+            </table>
+            </center>
+        </div>
+    </font>
+
+</div>
+
+
+
+
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

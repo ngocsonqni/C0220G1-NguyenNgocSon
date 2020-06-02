@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Register service </h1>
+                <th:block th:if="${message}">
+                    <p style="color: firebrick" th:text="${message}"></p>
+                </th:block>
+                <table style="width: 100%">
+                    <tr>
+                        <th>Mã dịch vụ</th>
+                        <th>Tên dịch vụ</th>
+                        <th>Diện tích</th>
+                        <th>Số tầng</th>
+                        <th>Số người tối đa</th>
+                        <th>Chi phí thuê</th>
+                        <th>Choice service</th>
+                    </tr>
+
+                    <th:block th:each="serviceResort : ${registerServices}">
+                        <tr>
+                            <td th:text="${serviceResort.maDichVu}"></td>
+                            <td th:text="${serviceResort.tenDichVu}"></td>
+                            <td th:text="${serviceResort.dienTich}"></td>
+                            <td th:text="${serviceResort.soTang}"></td>
+                            <td th:text="${serviceResort.soNguoiToiDa}"></td>
+                            <td th:text="${serviceResort.chiPhiThue}"></td>
+                            <td><a th:href="@{/register-service/__${serviceResort.idDichVu}__ }" style="color: #45a049">Choice service</a></td>
+                        </tr>
+                    </th:block>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

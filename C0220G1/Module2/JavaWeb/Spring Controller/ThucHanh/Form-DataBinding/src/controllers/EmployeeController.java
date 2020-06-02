@@ -20,7 +20,7 @@ public class EmployeeController {
     }
 
     @RequestMapping(value = "/addEmployee", method = RequestMethod.POST)
-    public String submit(@ModelAttribute("employee") Employee employee, BindingResult result, ModelMap model) {
+    public String submit(@ModelAttribute("employee") Employee employee, ModelMap model) {
         model.addAttribute("name", employee.getName());
         model.addAttribute("contactNumber", employee.getContactNumber());
         model.addAttribute("id", employee.getId());

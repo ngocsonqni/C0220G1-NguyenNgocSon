@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Delete Customer </h1>
+
+                <table style="width: 50%">
+                    <form action="#" th:action="@{/customer-delete}" th:object="${customer}"
+                          method="post" novalidate="novalidate">
+                        <input type="hidden" name="idKhachHang" th:field="*{idKhachHang}">
+                        <tr>
+                            <td>Mã khách hàng</td>
+                            <td><p th:text="*{maKhachHang}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Họ và tên</td>
+                            <td><p th:text="*{hoTen}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày sinh</td>
+                            <td><p th:text="*{ngaySinh}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số CMND</td>
+                            <td><p th:text="*{cmnd}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại</td>
+                            <td><p th:text="*{sdt}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Email</td>
+                            <td><p th:text="*{email}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Địa chỉ</td>
+                            <td><p th:text="*{diaChi}"/></td>
+                        </tr>
+                        <tr>
+                            <input type="submit" value="Delete customer"/>
+                        </tr>
+
+                    </form>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

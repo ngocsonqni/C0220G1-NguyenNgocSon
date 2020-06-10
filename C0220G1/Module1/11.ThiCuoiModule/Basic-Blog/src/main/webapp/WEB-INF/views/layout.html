@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" lang="en">
+<head th:fragment="head">
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        body.bg{
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        img.img1{
+            position: absolute;
+            margin-left: -8px;
+            margin-top: -105px;
+            top: 200px;
+            width: 350px;
+            height: 350px;
+        }
+
+        #blog {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #blog td, #blog th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #blog tr:nth-child(even){background-color: #f2f2f2;}
+        #blog tr:nth-child(odd){background-color: #f2f2f2;}
+        #blog tr:hover {background-color: #ddd;}
+
+        #blog th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body>
+
+<footer th:fragment="footer" style="margin-bottom: 20px;">
+    &copy; 2020 CodeGym
+</footer>
+</body>
+</html>

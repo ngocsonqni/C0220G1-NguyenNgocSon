@@ -1,0 +1,66 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="35b9f4a6-089c-4d0f-9550-33a4df133fb6" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/../../../Module1/9-XuLyChuoi/BaiTap/validatePhone.html" beforeDir="false" afterPath="$PROJECT_DIR$/../../../Module1/9-XuLyChuoi/BaiTap/validatePhone.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Controllers/MainClass.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Controllers/MainClass.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/House.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/House.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/Room.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/Room.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/Villa.csv" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Data/Villa.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/House.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/House.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Room.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Room.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Services.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Services.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Villa.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/Villa.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/mainTest.java" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/src/main/java/Models/mainTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Controllers/MainClass.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Controllers/MainClass.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/House.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/House.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Room.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Room.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Services.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Services.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Villa.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/Villa.class" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/mainTest.class" beforeDir="false" afterPath="$PROJECT_DIR$/../CaseStudy/target/classes/Models/mainTest.class" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../../.." />
+  </component>
+  <component name="ProjectId" id="1at7FIfsiXAjF8QFEwvTPGY3OXQ" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="aspect.path.notification.shown" value="true" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../.." />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="35b9f4a6-089c-4d0f-9550-33a4df133fb6" name="Default Changelist" comment="" />
+      <created>1587542931073</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1587542931073</updated>
+      <workItem from="1587542934911" duration="625000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+  <component name="WindowStateProjectService">
+    <state x="463" y="120" key="FileChooserDialogImpl" timestamp="1587543668863">
+      <screen x="0" y="0" width="1366" height="728" />
+    </state>
+    <state x="463" y="120" key="FileChooserDialogImpl/0.0.1366.728@0.0.1366.728" timestamp="1587543668863" />
+  </component>
+</project>

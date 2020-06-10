@@ -27,7 +27,9 @@ public class Contract {
     private String ngayLamHopDong;
 
     @Column(name = "ngayketthuc")
-    @Pattern(regexp = "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$",message = "Ngày kết thúc phải theo định dạng dd/mm/yyyy")
+    @Pattern(regexp = "^[0-9]{4}-(1[0-2]|0[1-9])-(3[01]|[12][0-9]|0[1-9])$",message = "Ngày kết thúc hợp đồng phải theo định dạng yyyy-mm-dd")
+
+//    @Pattern(regexp = "^(3[01]|[12][0-9]|0[1-9])/(1[0-2]|0[1-9])/[0-9]{4}$",message = "Ngày kết thúc phải theo định dạng dd/mm/yyyy")
     private String ngayKetThuc;
 
     @Column(name = "tiendatcoc")

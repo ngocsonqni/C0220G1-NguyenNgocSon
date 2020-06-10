@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Edit product </h1>
+                <th:block th:if="${message}">
+                    <p style="color: firebrick" th:text="${message}"></p>
+                </th:block>
+
+                <table style="width: 80%">
+                    <form action="#" th:action="@{/product-edit}" th:object="${product}"
+                          method="post" novalidate="novalidate">
+                        <input type="hidden" th:field="*{maHang}">
+                        <tr>
+                            <th></th>
+                            <th>Old data</th>
+                            <th>New data</th>
+                        </tr>
+
+                        <tr>
+                            <td>Tên Hàng</td>
+                            <td><p th:text="*{tenHang}"/></td>
+                            <td><input id="tenHang" type="text" th:field="*{tenHang}"></td>
+                        </tr>
+                        <tr th:if="${#fields.hasErrors('tenHang')}">
+                            <td></td>
+                            <td></td>
+                            <td><p th:if="${#fields.hasErrors('tenHang')}" th:errors="*{tenHang}" class="valid">Name Error</p></td>
+                        </tr>
+                        <tr>
+                            <td>Loại hàng</td>
+                            <td><p th:text="*{productType.loaiHang}"/></td>
+                            <td>
+                                <select th:field="*{productType.loaiHang}">
+                                    <th:block th:each="product1 : ${productType}">
+                                        <option th:value="${product1.loaiHang}" th:text="${product1.loaiHang}"></option>
+                                    </th:block>
+                                </select>
+                            </td>
+                        </tr>
+                        <tr th:if="${#fields.hasErrors('productType')}">
+                            <td></td>
+                            <td></td>
+                            <td><p th:if="${#fields.hasErrors('productType')}" th:errors="*{productType}" class="valid">Name Error</p></td>
+                        </tr>
+                        <tr>
+                            <td>Giá hàng</td>
+                            <td><p th:text="*{giaHang}"/></td>
+                            <td><input id="ngaySinh" type="text" th:field="*{giaHang}"></td>
+                        </tr>
+                        <tr th:if="${#fields.hasErrors('giaHang')}">
+                            <td></td>
+                            <td></td>
+                            <td><p th:if="${#fields.hasErrors('giaHang')}" th:errors="*{giaHang}" class="valid">Name Error</p></td>
+                        </tr>
+                        <tr>
+                            <td>Số lượng</td>
+                            <td><p th:text="*{soLuong}"/></td>
+                            <td><input id="cmnd" type="text" th:field="*{soLuong}"></td>
+                        </tr>
+                        <tr th:if="${#fields.hasErrors('soLuong')}">
+                            <td></td>
+                            <td></td>
+                            <td><p th:if="${#fields.hasErrors('soLuong')}" th:errors="*{soLuong}" class="valid">Name Error</p></td>
+                        </tr>
+                        <tr>
+                            <td>Mô tả</td>
+                            <td><p th:text="*{moTa}"/></td>
+                            <td><input id="sdt" type="text" th:field="*{moTa}"></td>
+                        </tr>
+                        <tr th:if="${#fields.hasErrors('moTa')}">
+                            <td></td>
+                            <td></td>
+                            <td><p th:if="${#fields.hasErrors('moTa')}" th:errors="*{moTa}" class="valid">Name Error</p></td>
+                        </tr>
+
+                        <tr>
+                            <input type="submit" value="Edit product"/>
+                        </tr>
+
+                    </form>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

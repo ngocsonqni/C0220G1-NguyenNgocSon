@@ -60,8 +60,10 @@ public class ContractController {
     @GetMapping("/customer-using-service")
     public ModelAndView customerUsingService(){
         List<Customer> customers = new ArrayList<>();
-        for (int i=0;i<contractService.findAll().size();i++){
-            customers.add(customerService.findById(contractService.findAll().get(i).getIdHopDong()));
+        if (contractService.findAll().size()-1>=0){
+            for (int i=0;i<=contractService.findAll().size()-1;i++){
+                    customers.add(customerService.findById(contractService.findAll().get(i).getCustomer().getIdKhachHang()));
+            }
         }
         ModelAndView modelAndView=new ModelAndView("contract/customerUsingService");
         modelAndView.addObject("customerUsingService",customers);
@@ -87,4 +89,6 @@ public class ContractController {
         modelAndView.addObject("message","Đã đăng ký thành công dịch vụ, vui lòng chờ admin xác nhận!");
         return modelAndView;
     }
+
+
 }

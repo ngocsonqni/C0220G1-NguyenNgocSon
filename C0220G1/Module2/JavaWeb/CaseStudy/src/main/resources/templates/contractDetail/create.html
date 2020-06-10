@@ -24,20 +24,29 @@
                         <td>Mã hợp đồng chi tiết</td>
                         <td><input id="maHopDongChiTiet" type="text" th:field="*{maHopDongChiTiet}"></td>
                     </tr>
+
                     <tr th:if="${#fields.hasErrors('maHopDongChiTiet')}">
                         <td></td>
                         <td><p th:if="${#fields.hasErrors('maHopDongChiTiet')}" th:errors="*{maHopDongChiTiet}" class="valid">Name Error</p></td>
                     </tr>
                     <tr>
-                        <td>ID hợp đồng</td>
-                        <td><input id="idHopDong" type="text" th:field="*{contract}"></td>
+                        <td>Mã hợp đồng</td>
+                        <td>
+                            <select th:field="*{contract.idHopDong}">
+                                <th:block th:each="contract1 : ${contract}">
+                                    <option th:value="${contract1.idHopDong}" th:text="${contract1.maHopDong}"></option>
+                                </th:block>
+                            </select>
+                        </td>
                     </tr>
+
+
                     <tr th:if="${#fields.hasErrors('contract')}">
                         <td></td>
                         <td><p th:if="${#fields.hasErrors('contract')}" th:errors="*{contract}" class="valid">Name Error</p></td>
                     </tr>
                     <tr>
-                        <td>ID dịch vụ đi kèm</td>
+                        <td>Tên dịch vụ đi kèm</td>
                         <td><input id="idDichVuDiKem" type="text" th:field="*{tenDichVuDiKem}"></td>
                     </tr>
                     <tr th:if="${#fields.hasErrors('tenDichVuDiKem')}">

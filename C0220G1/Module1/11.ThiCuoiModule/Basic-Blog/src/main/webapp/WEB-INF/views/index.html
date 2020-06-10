@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <style type="text/css">
+        body.bg{
+            background-repeat: no-repeat;
+            background-size: cover;
+        }
+        img.img{
+            position: absolute;
+            width: 350px;
+            height: 350px;
+        }
+
+        #blog {
+            font-family: "Trebuchet MS", Arial, Helvetica, sans-serif;
+            border-collapse: collapse;
+            width: 100%;
+        }
+
+        #blog td, #blog th {
+            border: 1px solid #ddd;
+            padding: 8px;
+        }
+
+        #blog tr:nth-child(even){background-color: #f2f2f2;}
+        #blog tr:nth-child(odd){background-color: #f2f2f2;}
+        #blog tr:hover {background-color: #ddd;}
+
+        #blog th {
+            padding-top: 12px;
+            padding-bottom: 12px;
+            text-align: left;
+            background-color: #4CAF50;
+            color: white;
+        }
+    </style>
+</head>
+<body class="bg" background="https://i.ibb.co/C5bDsqm/bg.jpg">
+
+
+    <img class="img" src="https://i.ibb.co/09b4PzZ/img2.png" onclick="table()" id="img2" hidden="true" style="margin-left: 30px;margin-top: -60px;">
+    <img class="img" src="https://i.ibb.co/09b4PzZ/img2.png"  onclick="img1()" id="img3" hidden="true" style="margin-left: 170px;margin-top: 110px;">
+    <img class="img" src="https://i.ibb.co/09b4PzZ/img2.png"  onclick="img1()" id="img4" hidden="true" style="margin-left: 30px;margin-top: 280px;">
+    <img class="img" src="https://i.ibb.co/vmYTb8L/img1.png"  onclick="img1()" style="margin-left: -10px;margin-top: 90px;">
+    <table border="1" hidden="true" id="blog">
+    <tr>
+        <th>sasasa</th>
+        <th>sasasa</th>
+    </tr>
+    <tr>
+        <td>sasasa</td>
+        <td>sasasa</td>
+    </tr>
+</table>
+<script>
+    function table() {
+        document.getElementById("blog").hidden=false;
+    }
+    function img1() {
+        document.getElementById("img2").hidden=false;
+        document.getElementById("img3").hidden=false;
+        document.getElementById("img4").hidden=false;
+    }
+</script>
+
+</body>
+</html>

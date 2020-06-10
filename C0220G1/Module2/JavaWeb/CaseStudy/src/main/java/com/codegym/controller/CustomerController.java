@@ -35,7 +35,6 @@ public class CustomerController {
             customerService.save(customer);
             modelAndView.addObject("customer", new Customer());
             modelAndView.addObject("message", "New customer created successfully");
-
         }
         return modelAndView;
     }

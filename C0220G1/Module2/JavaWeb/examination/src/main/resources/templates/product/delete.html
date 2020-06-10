@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org">
+<head th:replace="layout :: head"></head>
+<body>
+<div th:replace="layout ::title"></div>
+<div th:replace="layout ::columnLeft"></div>
+<div class="column middle">
+    <font face="inherit">
+        <div class="cm">
+            <center>
+                <h1>Delete product </h1>
+
+                <table style="width: 50%">
+                    <form action="#" th:action="@{/product-delete}" th:object="${product}"
+                          method="post" novalidate="novalidate">
+                        <input type="hidden" name="idKhachHang" th:field="*{maHang}">
+                        <tr>
+                            <td>Mã khách hàng</td>
+                            <td><p th:text="*{tenHang}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Họ và tên</td>
+                            <td><p th:text="*{productType.loaiHang}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Ngày sinh</td>
+                            <td><p th:text="*{giaHang}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số CMND</td>
+                            <td><p th:text="*{soLuong}"/></td>
+                        </tr>
+                        <tr>
+                            <td>Số điện thoại</td>
+                            <td><p th:text="*{moTa}"/></td>
+                        </tr>
+                        <tr>
+                            <input type="submit" value="Delete product"/>
+                        </tr>
+
+                    </form>
+                </table>
+            </center>
+        </div>
+    </font>
+</div>
+<div th:replace="layout ::columnRight"></div>
+</body>
+</html>

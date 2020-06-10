@@ -17,11 +17,14 @@ import org.springframework.web.servlet.ModelAndView;
 public class ContractDetailController {
     @Autowired
     ContractDetailService contractDetailService;
+    @Autowired
+    ContractService contractService;
 
     @GetMapping("/contractDetail-create")
     public ModelAndView showCreateForm(){
         ModelAndView modelAndView=new ModelAndView("/contractDetail/create");
         modelAndView.addObject("contractDetail",new ContractDetail());
+        modelAndView.addObject("contract",contractService.findAll());
         return modelAndView;
     }
     @PostMapping("/contractDetail-create")
@@ -32,6 +35,8 @@ public class ContractDetailController {
             contractDetailService.save(contractDetail);
             modelAndView.addObject("contractDetail", new ContractDetail());
             modelAndView.addObject("message", "New contract detail created successfully");
+        }else{
+            modelAndView.addObject("contract",contractService.findAll());
         }
         return modelAndView;
     }

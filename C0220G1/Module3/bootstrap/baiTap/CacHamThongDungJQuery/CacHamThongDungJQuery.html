@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Các hàm thông dụng của JQuery</title>
+    <link rel="stylesheet" href="../../../css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/css.css">
+    <script src="../../../js/jquery-3.5.1.min.js"></script>
+    <script src="css/JQuery.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.11.0/umd/popper.min.js" integrity="sha384-b/U6ypiBEHpOf/4+1nzFpr53nxSS+GLCkfwBdFNTxtclqqenISfwAzpKaMNFNmj4" crossorigin="anonymous"></script>
+    <script src="../../../js/bootstrap.min.js"></script>
+
+
+</head>
+<body>
+<div class="auto-scroll">
+    <a class="auto-scroll-a" href="#scroll">
+        <img class="auto-scroll-img" src="css/images/to-top.png"/>
+    </a>
+</div>
+<div class="container-fluid">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="scroll-to-top">
+                <a class="scroll-to-top-a" href="#top">
+                    <img class="scroll-to-top-img" src="css/images/to-top.png"/>
+                </a>
+            </div>
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="logo-a" href="http://localhost:63342/Module3/bootstrap/baiTap/CacHamThongDungJQuery/CacHamThongDungJQuery.html?_ijt=4h6boue8r5ota2975n55du6nuq">
+                    <img  class="logo-1" src="css/images/logo.png" />
+                </a>
+                <p class="stick"></p>
+                <div class="navbar-brand-div">
+                    <a class="navbar-brand"  href="#">Bootstrap </a>
+                </div>
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav mr-auto">
+                        <li class="nav-item dropdown">
+                            <a class="nav-link dropdown-toggle" href="#" id="navbarDropdown1" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
+                                Các hàm thông dụng của JQuery
+                            </a>
+                            <div class="dropdown-menu dropdown-menu-1" aria-labelledby="navbarDropdown1">
+
+                                <div class="dropright">
+                                    <button class="btn btn-light dropdown-toggle dropright-item dropright-1" data-toggle="dropdown">Danh sách hàm 1</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">find()</a>
+                                        <a class="dropdown-item" href="#">hide()</a>
+                                        <a class="dropdown-item" href="#">toggle()</a>
+                                        <a class="dropdown-item" href="#">show()</a>
+                                        <a class="dropdown-item" href="#">animate()</a>
+                                    </div>
+                                </div>
+
+                                <div class="dropright">
+                                    <button class="btn btn-light dropdown-toggle dropright-item dropright-1" data-toggle="dropdown">Danh sách hàm 2</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">fadeIn()</a>
+                                        <a class="dropdown-item" href="#">fadeOut()</a>
+                                        <a class="dropdown-item" href="#">slideUp()</a>
+                                        <a class="dropdown-item" href="#">slideDown()</a>
+                                        <a class="dropdown-item" href="#">html()</a>
+                                    </div>
+                                </div>
+
+                                <div class="dropright">
+                                    <button class="btn btn-light dropdown-toggle dropright-item dropright-1" data-toggle="dropdown">Danh sách hàm 3</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">append()</a>
+                                        <a class="dropdown-item" href="#">prepend()</a>
+                                        <a class="dropdown-item" href="#">on()</a>
+                                        <a class="dropdown-item" href="#">off()</a>
+                                        <a class="dropdown-item" href="#">css()</a>
+                                    </div>
+                                </div>
+
+                                <div class="dropright">
+                                    <button class="btn btn-light dropdown-toggle dropright-item dropright-1" data-toggle="dropdown">Danh sách hàm 4</button>
+                                    <div class="dropdown-menu">
+                                        <a class="dropdown-item" href="#">attr()</a>
+                                        <a class="dropdown-item" href="#">val()</a>
+                                        <a class="dropdown-item" href="#">text()</a>
+                                        <a class="dropdown-item" href="#">each()</a>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 surface1">
+            <img src="css/images/Surface_1.jpg" class="img-fluid" alt="Responsive image">
+        </div>
+    </div>
+    <div class="row">
+        <div class="col-md-12 surface-p">
+            <p class="surface-p1">[Bài tập] Giới thiệu các hàm thông dụng của jQuery</p>
+            <p class="surface-p2">Giới thiệu các hàm thông dụng của jQuery</p>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 surface4">
+            <div class="surface4-1">
+                <div class="surface4-1-txt">
+                    <p class="surface4-1-txt-1">find()</p>
+                    <p class="surface4-1-txt-2">Giúp tìm thành phần trong thành phần cha</p>
+                    <p class="surface4-1-txt-3">Cấu trúc:</p>
+                    <p class="surface4-1-txt-3">$('cha').find($('con'));</p>
+                    <p class="surface4-1-txt-3">Hàm này giúp tìm ra các phần tử 'con' ở trong phần tử 'cha'</p>
+                    <a href="#" class="surface4-1-link">
+                        <span class="surface4-1-txt-4">Demo</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="surface4-2">
+                <div class="surface4-2-txt ">
+                    <p class="surface4-2-txt-1">NEW</p>
+                    <p class="surface4-2-txt-2">Surface Headphones 2</p>
+                    <p class="surface4-2-txt-3"> Spectacular sound, comfort and active noise cancellation</p>
+                    <a href="#" class="surface4-2-link">
+                        <span class="surface4-2-txt-4">Experience Surface Headphones 2</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="surface4-3">
+                <div class="surface4-3-txt ">
+                    <p class="surface4-3-txt-2">Surface Laptop 3</p>
+                    <p class="surface4-3-txt-3">Slim and stylish, 13.5” or 15” touchscreen</p>
+                    <a href="#" class="surface4-3-link">
+                        <span class="surface4-3-txt-4">EXPLORE Surface Laptop 3</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="surface4-4">
+                <div class="surface4-4-txt">
+                    <p class="surface4-4-txt-2">Surface Pro 7</p>
+                    <p class="surface4-4-txt-3">12.3” touchscreen with tablet-to-laptop versatility</p>
+                    <a href="#" class="surface4-4-link">
+                        <span class="surface4-4-txt-4">MEET Surface Pro 7</span>
+                    </a>
+                </div>
+            </div>
+
+            <div class="surface4-5">
+                <div class="surface4-5-txt">
+                    <p class="surface4-5-txt-1">NEW</p>
+                    <p class="surface4-5-txt-2">Surface Earbuds</p>
+                    <p class="surface4-5-txt-3">Premium sound, fit and screen-free control</p>
+                    <a href="#" class="surface4-5-link">
+                        <span class="surface4-5-txt-4">EXPERIENCE Surface Earbuds</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 surface4-col-2">
+            <div class="surface4-6">
+                <div class="surface4-6-txt">
+                    <p class="surface4-6-txt-1">NEW</p>
+                    <p class="surface4-6-txt-2">Surface Book 3</p>
+                    <p class="surface4-6-txt-3">Our most powerful 13.5” or 15” touchscreen laptop</p>
+                    <a href="#" class="surface4-6-link">
+                        <span class="surface4-6-txt-4">Learn about Surface Book 3</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-md-12 surface6">
+            <div class="surface6-div">
+                <p class="surface6-txt">
+                    Cái này là cái footer đấy ạ! Vì sao nó lại ngắn ntn? Vì nó không phải phần quan trọng, và vì mình ... lười <3
+                </p>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+</body>
+</html>

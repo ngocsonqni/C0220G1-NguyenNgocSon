@@ -10,5 +10,9 @@ public class MainController {
     public String goLogin(){
         return "index";
     }
+    @GetMapping("/listHocVien")
+    public String listHocVien(){
+        return "product/listHocVien";
+    }
 }
 

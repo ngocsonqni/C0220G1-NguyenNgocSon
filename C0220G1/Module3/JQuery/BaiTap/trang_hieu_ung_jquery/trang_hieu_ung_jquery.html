@@ -1,0 +1,434 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Website</title>
+    <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.12.0.min.js"></script>
+    <script src = "https://code.jquery.com/ui/1.10.4/jquery-ui.js"></script>
+<!--    <script src = "https://code.jquery.com/jquery-1.10.2.js"></script>-->
+    <link href = "https://code.jquery.com/ui/1.10.4/themes/ui-lightness/jquery-ui.css"
+          rel = "stylesheet">
+
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+
+    <link rel="stylesheet" href="css.css">
+
+<!--open from 9-Dialog-->
+<!--    <link rel="stylesheet" href="//code.jquery.com/ui/1.12.1/themes/base/jquery-ui.css">-->
+
+<!--    <script src="https://code.jquery.com/jquery-1.12.4.js"></script>-->
+<!--    <script src="https://code.jquery.com/ui/1.12.1/jquery-ui.js"></script>-->
+
+
+
+
+
+
+
+</head>
+<body>
+<div class="container-fluid">
+    <div class="left">
+        <ol>
+            <li>Draggable</li>
+            <li>Droppable</li>
+            <li>Resizable</li>
+            <li>Selectable</li>
+            <li>Sortable</li>
+            <li>Accordion</li>
+            <li>Autocomplete</li>
+            <li>Datepicker</li>
+            <li>Dialog</li>
+            <li>Slider</li>
+            <li>Progressbar</li>
+            <li>Spinner</li>
+            <li>Tabs</li>
+            <li>Add class</li>
+            <li>Remove class</li>
+        </ol>
+
+    </div>
+
+    <div class="right">
+<!--       1&2.Draggable and Droppable-->
+        <div class="box1">
+            <p class="title1">1&2.Draggable and Droppable</p>
+            <div id="droppable-1" class = "ui-widget-header">
+                <center><p>Drop me </p></center>
+            </div>
+            <div id = "droppable-2" class = "ui-widget-header" >
+                <p>Drop here</p>
+            </div>
+            <div id = "droppable-3" class = "ui-widget-header" >
+                <p>I'm disabled, you can't drop here!</p>
+            </div>
+            <div id = "droppable-4" class = "ui-widget-header" >
+                <p>Tolerance Touch!</p>
+            </div>
+            <div id = "droppable-5" class = "ui-widget-header" >
+                <p>Tolerance Fit!</p>
+            </div>
+        </div>
+<!--       3.Resizable-->
+        <div class="box1">
+            <p class="title1">3.Resizable</p>
+            <div id="main">
+                <div id="resizable" class="ui-widget-content">
+                    <p class="ui-widget-header">Resizable</p>
+                </div>
+            </div>
+        </div>
+<!--        4.Selectable-->
+        <div class="box1">
+            <p class="title1">4.Selectable</p>
+            <ol id="selectable">
+                <li class="ui-widget-content">Nguyễn Đình Hòa</li>
+                <li class="ui-widget-content">Trần Ngọc Tân</li>
+                <li class="ui-widget-content">Võ Minh Hùng</li>
+                <li class="ui-widget-content">Phạm Thái Cường</li>
+                <li class="ui-widget-content">Văn Nhân Lam</li>
+            </ol>
+        </div>
+<!--        5.Sortable-->
+        <div class="box1">
+            <p class="title1">5.Sortable</p>
+            <ol id="sortable">
+                <li class="ui-widget-content">Nguyễn Đình Hòa</li>
+                <li class="ui-widget-content">Trần Ngọc Tân</li>
+                <li class="ui-widget-content">Võ Minh Hùng</li>
+                <li class="ui-widget-content">Phạm Thái Cường</li>
+                <li class="ui-widget-content">Văn Nhân Lam</li>
+            </ol>
+<!--            6.Accordion-->
+        </div>
+        <div class="box2">
+            <p class="title1">6.Accordion</p>
+            <div id="accordion" style="height: 200px;width: 450px;text-align: center;margin-left: 250px" >
+                <h3>Leesin</h3>
+                <div>
+                    <img src="img/ls.jpg">
+
+                </div>
+                <h3>Leesin</h3>
+                <div>
+                    <img src="img/ls.jpg">
+
+                </div>
+                <h3>Syndra</h3>
+                <div>
+                    <img src="img/sd.jpg">
+
+                </div>
+                <h3>Lux</h3>
+                <div>
+                    <img src="img/lux.jpg">
+                </div>
+            </div>
+        </div>
+<!--        7.Autocomplete-->
+        <div class="box1">
+            <p class="title1">7.Autocomplete</p>
+            <div class="ui-widget" style="text-align: center;margin-top: 30px;font-size: 60px" >
+                <label for="tags" style="color: white">Tags: </label>
+                <input id="tags" type="text" placeholder="Input keyword" style="text-align: center;
+                background:linear-gradient(orange,rebeccapurple)">
+            </div>
+        </div>
+<!--        8.Datepicker-->
+        <div class="box1">
+            <p class="title1">8.Datepicker</p>
+            <p style="text-align: center;margin-top: 30px;font-size: 60px;color: white">Date:
+                <input type="text" id="datepicker" style="background:linear-gradient(orange,rebeccapurple);text-align: center ;"
+                       placeholder="Click me"></p>
+        </div>
+<!--        9.Dialog-->
+<!--        <div class="box1">-->
+<!--            <p class="title1">9.Dialog</p>-->
+<!--                <div id="dialog" title="Basic dialog" style="background:linear-gradient(orange,rebeccapurple )!important">-->
+<!--                <p>This is the default dialog which is useful for displaying information.-->
+<!--                    The dialog window can be moved, resized and closed with the 'x' icon.</p>-->
+<!--                </div>-->
+<!--        </div>-->
+<!--        10.Slider-->
+        <div class="box1">
+            <p class="title1">10.Slider</p>
+            <div id="slider" style="margin-top: 50px;width: 70%;margin-left:110px"></div>
+
+        </div>
+<!--        11.Progressbar-->
+        <div class="box1">
+            <p class="title1">11.Progressbar</p>
+            <div id="progressbar" style="margin-top: 50px;width: 70%;margin-left:110px"></div>
+        </div>
+<!--        12.Spinne-->
+        <div class="box1">
+            <p class="title1"> 12.Spinne</p>
+            <center>
+                <p>
+                    <label for="spinner" style="color: white">Select a value:</label>
+                    <input id="spinner" name="value">
+                </p>
+
+                <p>
+                    <button id="disable">Toggle disable/enable</button>
+                    <button id="destroy">Toggle widget</button>
+                </p>
+
+                <p>
+                    <button id="getvalue">Get value</button>
+                    <button id="setvalue">Set value to 5</button>
+                </p>
+            </center>
+        </div>
+<!--        13.Tabs-->
+        <div class="box1" style="height: 720px">
+            <p class="title1">13.Tabs</p>
+            <div id="tabs">
+                <ul style="width: 333px;margin-left: 295px;height: 45px">
+                    <li><a href="#tabs-1">Elise</a></li>
+                    <li><a href="#tabs-2">Kalista</a></li>
+                    <li><a href="#tabs-3">Vayne</a></li>
+                    <li><a href="#tabs-4">Tristana</a></li>
+                </ul>
+                <div id="tabs-1">
+                    <center><img src="img/elise.png"/></center>
+                </div>
+                <div id="tabs-2">
+                    <center><img src="img/kalista.png"/></center>
+                </div>
+                <div id="tabs-3">
+                    <center><img src="img/vayne.png"/></center>
+                </div>
+                <div id="tabs-4">
+                    <center><img src="img/tristana.png"/></center>
+                </div>
+            </div>
+        </div>
+<!--        14.Add class-->
+        <div class="box1" >
+            <p class="title1"> 14.Add class</p>
+            <div class="toggler1">
+                <div id="effect1" class="ui-corner-all">
+                    Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede.
+                </div>
+            </div>
+
+            <button id="button1" class="ui-state-default ui-corner-all">Run Effect</button>
+
+        </div>
+<!--        15.Remove class-->
+        <div class="box1">
+            <p class="title1">15.Remove class</p>
+            <div class="toggler2">
+                <div id="effect2" class="newClass ui-corner-all">
+                    Etiam libero neque, luctus a, eleifend nec, semper at, lorem. Sed pede.
+                </div>
+            </div>
+
+            <button id="button2" class="ui-state-default ui-corner-all">Run Effect</button>
+        </div>
+
+    </div>
+</div>
+
+
+
+
+
+
+
+
+
+
+
+
+<script>
+    // 1&2.Draggable and Droppable
+    $(document).ready(function () {
+        $("#droppable-1").draggable();
+    });
+    $( "#droppable-2" ).droppable({
+        drop: function( event, ui ) {
+            $( this )
+                .addClass( "ui-state-highlight" )
+                .find( "p" )
+                .html( "Dropped!" );
+        }
+    });
+    $( "#droppable-3" ).droppable({
+        disabled : "true",
+        drop: function( event, ui ) {
+            $( this )
+                .addClass( "ui-state-highlight" )
+                .find( "p" )
+                .html( "Dropped!" );
+        }
+    });
+
+    $( "#droppable-4" ).droppable({
+        tolerance: 'touch',
+        drop: function( event, ui ) {
+            $( this )
+                .addClass( "ui-state-highlight" )
+                .find( "p" )
+                .html( "Dropped with a touch!" );
+        }
+    });
+
+    $( "#droppable-5" ).droppable({
+        tolerance: 'fit',
+        drop: function( event, ui ) {
+            $( this )
+                .addClass( "ui-state-highlight" )
+                .find( "p" )
+                .html( "Dropped only when fully fit on the me!" );
+        }
+    });
+
+    // 3.Resizable
+    $(document).ready(function() {
+        $('#main').resizable();
+
+    });
+
+    // 4.Selectable
+    $( function() {
+        $( "#selectable" ).selectable();
+    } );
+
+    // 5.Sortable
+    $( function() {
+        var sort= $( "#sortable" );
+        sort.sortable();
+        sort.disableSelection();
+    } );
+    // 6.Accordion
+    $( function() {
+        $( "#accordion" ).accordion();
+    } );
+    // 7.Autocomplete
+    $( function() {
+        var availableTags = [
+            "ActionScript",
+            "AppleScript",
+            "Asp",
+            "BASIC",
+            "C",
+            "C++",
+            "Clojure",
+            "COBOL",
+            "ColdFusion",
+            "Erlang",
+            "Fortran",
+            "Groovy",
+            "Haskell",
+            "Java",
+            "JavaScript",
+            "Lisp",
+            "Perl",
+            "PHP",
+            "Python",
+            "Ruby",
+            "Scala",
+            "Scheme"
+        ];
+        $( "#tags" ).autocomplete({
+            source: availableTags
+        });
+    } );
+    // 8.Datepicker
+    $( function() {
+        $( "#datepicker" ).datepicker();
+    } );
+    // 9.Dialog
+    $( function() {
+        $( "#dialog" ).dialog();
+    } );
+    // 10.Slider
+    $( function() {
+        $( "#slider" ).slider();
+    } );
+    // 11.Progressbar
+    $( function() {
+        $( "#progressbar" ).progressbar({
+            value: 70
+        });
+    } );
+
+
+    // 12.Spinne
+    $( function() {
+        var spinner = $( "#spinner" ).spinner();
+
+        $( "#disable" ).on( "click", function() {
+            if ( spinner.spinner( "option", "disabled" ) ) {
+                spinner.spinner( "enable" );
+            } else {
+                spinner.spinner( "disable" );
+            }
+        });
+        $( "#destroy" ).on( "click", function() {
+            if ( spinner.spinner( "instance" ) ) {
+                spinner.spinner( "destroy" );
+            } else {
+                spinner.spinner();
+            }
+        });
+        $( "#getvalue" ).on( "click", function() {
+            alert( spinner.spinner( "value" ) );
+        });
+        $( "#setvalue" ).on( "click", function() {
+            spinner.spinner( "value", 5 );
+        });
+
+        $( "button" ).button();
+    } );
+
+    // 13.Tabs
+    $( function() {
+        $( "#tabs" ).tabs();
+    } );
+
+    // 14.Add class
+    $( function() {
+        $( "#button1" ).on( "click", function() {
+            $( "#effect1" ).addClass( "newClass", 1000, callback );
+        });
+
+        function callback() {
+            setTimeout(function() {
+                $( "#effect1" ).removeClass( "newClass" );
+            }, 1500 );
+        }
+    } );
+
+    // 15.Remove class
+    $( function() {
+        $( "#button2" ).on( "click", function() {
+            $( "#effect2" ).removeClass( "newClass", 1000, callback );
+        });
+
+        function callback() {
+            setTimeout(function() {
+                $( "#effect2" ).addClass( "newClass" );
+            }, 1500 );
+        }
+    } );
+
+
+
+
+
+
+</script>
+
+
+
+
+
+
+
+</body>
+</html>

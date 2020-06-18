@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="">
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="x-ua-compatible" content="ie=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>
+    <%= htmlWebpackPlugin.options.title %>
+  </title>
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <meta name="description" content="<%= htmlWebpackPlugin.options.title %>">
+  <script src="index.js"></script>
+</head>
+<body>
+<h1>TypeScript Fundamentals</h1>
+<input id="key" placeholder="Nhập từ muốn tìm kiếm" ><button onclick="click(document.getElementById('key').value)">Tìm kiếm</button>
+<br>
+<table border="1px">
+  <tr style="background-color: grey">
+    <td>Tên project</td>
+    <td>Mô tả</td>
+    <td>Ngôn ngữ</td>
+    <td>Đường dẫn</td>
+    <td>Lượt xem</td>
+  </tr>
+</table>
+</body>
+</html>

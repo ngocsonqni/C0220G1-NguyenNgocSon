@@ -1,0 +1,31 @@
+<table style="text-align: left">
+  <tr>
+    <td>
+      <input type="text" [value]="num1" (change)="updateNum1($event.target.value)">
+    </td>
+    <td>
+      <select
+        class="form-input" [value]="operator" (change)="updateOperator($event.target.value)">
+        <option value="+" selected="selected">+</option>
+        <option value="-">-</option>
+        <option value="*">*</option>
+        <option value="/">/</option>
+      </select>
+    </td>
+    <td>
+      <input type="text" [value]="num2" (change)="updateNum2($event.target.value)">
+    </td>
+  </tr>
+  <tr>
+    <th>
+      <button type="submit" (click)="caculation()">caculation</button>
+    </th>
+  </tr>
+  <tr>
+    <th>
+      <div>
+        {{equal}}
+      </div>
+    </th>
+  </tr>
+</table>

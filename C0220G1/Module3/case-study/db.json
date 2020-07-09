@@ -1,0 +1,24 @@
+{
+  "customerList": [
+    {
+      "id": 1,
+      "identityNumber": "212405555",
+      "address": "quảng ngãi",
+      "email": "van.cp03@gmail.com",
+      "name": "nguyễn ngọc sơna",
+      "customerCode": "KH-0001",
+      "dateOfBirth": "1994-06-07",
+      "phoneNumber": "0911234567"
+    },
+    {
+      "id": 2,
+      "identityNumber": "212405666",
+      "address": "đà  nẵng",
+      "email": "van.cp04@gmail.com",
+      "name": "nguyen ngoc son",
+      "customerCode": "KH-0001",
+      "dateOfBirth": "1994-08-07",
+      "phoneNumber": "0911234567"
+    }
+  ]
+}

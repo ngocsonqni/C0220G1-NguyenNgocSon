@@ -1,0 +1,112 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ChangeListManager">
+    <list default="true" id="a2cf3765-dd99-4eb2-8dde-45ec68abd005" name="Default Changelist" comment="">
+      <change afterPath="$PROJECT_DIR$/../../Module2/JavaWeb/CaseStudy/src/main/resources/static/images/images.rar" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../../Module2/JavaWeb/CaseStudy/src/main/resources/templates/layout.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/auth.service.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/auth.service.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-child/content-child.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-child/content-child.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-child/content-child.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-child/content-child.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.module.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/content-projection.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/cp-card/cp-card.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/cp-card/cp-card.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/cp-card/cp-card.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/content-projection/cp-card/cp-card.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-card/image-card.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-card/image-card.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-card/image-card.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-card/image-card.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-gallery.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-gallery.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-gallery.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-gallery.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/image-gallery.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/image-gallery/token.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slide/img-slide.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slide/img-slide.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slide/img-slide.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slide/img-slide.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slider.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slider.component.scss" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slider.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slider.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/img-slider/img-slider.module.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/reactive-form/reactive-form.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/reactive-form/reactive-form.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/reactive-form/reactive-form.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/app/reactive-form/reactive-form.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../angular/src/assets/img/angular.svg" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/db.json" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/app/customer/edit-customer/edit-customer.component.css" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/app/customer/edit-customer/edit-customer.component.html" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/app/customer/edit-customer/edit-customer.component.spec.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/app/customer/edit-customer/edit-customer.component.ts" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/assets/Scifi-Background-Loop.mp4" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/assets/logo.gif" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../case-study/src/assets/to-top.png" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/.gitignore" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/misc.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/modules.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/.idea/vcs.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/../test/layout.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/baiTap/landing_page/css/JQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/baiTap/landing_page/css/JQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/angular.json" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/angular.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/package-lock.json" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/package-lock.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/package.json" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/package.json" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/src/app/app.component.css" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/src/app/app.component.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/src/app/app.component.html" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/src/app/app.component.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../case-study/src/app/app.module.ts" beforeDir="false" afterPath="$PROJECT_DIR$/../case-study/src/app/app.module.ts" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/css/JQuery.js" beforeDir="false" afterPath="$PROJECT_DIR$/../test/css/JQuery.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/css/css.css" beforeDir="false" afterPath="$PROJECT_DIR$/../test/css/css.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/css/images/logo.png" beforeDir="false" afterPath="$PROJECT_DIR$/../test/css/images/logo.png" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/css/test.css" beforeDir="false" afterPath="$PROJECT_DIR$/../test/css/test.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/css/test.js" beforeDir="false" afterPath="$PROJECT_DIR$/../test/css/test.js" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/landingPage.html" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/../test/test.html" beforeDir="false" afterPath="$PROJECT_DIR$/../test/test.html" afterDir="false" />
+    </list>
+    <option name="SHOW_DIALOG" value="false" />
+    <option name="HIGHLIGHT_CONFLICTS" value="true" />
+    <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
+    <option name="LAST_RESOLUTION" value="IGNORE" />
+  </component>
+  <component name="Git.Settings">
+    <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$/../../.." />
+  </component>
+  <component name="ProjectId" id="1dq0AyZZTjvKP5j1E4aCuAaKPOS" />
+  <component name="ProjectLevelVcsManager" settingsEditedManually="true" />
+  <component name="ProjectViewState">
+    <option name="hideEmptyMiddlePackages" value="true" />
+    <option name="showExcludedFiles" value="true" />
+    <option name="showLibraryContents" value="true" />
+  </component>
+  <component name="PropertiesComponent">
+    <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
+    <property name="WebServerToolWindowFactoryState" value="false" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+  </component>
+  <component name="SvnConfiguration">
+    <configuration />
+  </component>
+  <component name="TaskManager">
+    <task active="true" id="Default" summary="Default task">
+      <changelist id="a2cf3765-dd99-4eb2-8dde-45ec68abd005" name="Default Changelist" comment="" />
+      <created>1593137175466</created>
+      <option name="number" value="Default" />
+      <option name="presentableId" value="Default" />
+      <updated>1593137175466</updated>
+      <workItem from="1593137176882" duration="29000" />
+    </task>
+    <servers />
+  </component>
+  <component name="TypeScriptGeneratedFilesManager">
+    <option name="version" value="1" />
+  </component>
+</project>
